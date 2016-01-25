@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GOLD Engine">
-      <HintPath>..\..\..\..\..\important_dlls\GOLD Engine.dll</HintPath>
+      <HintPath>..\..\Szintaktikai_Fordito\Szintaktikai_Fordito\Gold_Engine\GOLD Engine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
