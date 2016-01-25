@@ -81,15 +81,13 @@ namespace Luna_interpreter.GOLD_Engine
                     case GOLD.SymbolType.Nonterminal:
                         GOLD.Reduction branch = (GOLD.Reduction)reduction[n].Data;
 
-                        tree.AppendLine(indentText + "+-" + branch.Parent.Text(false));
-//                        container.Add(reduction[n]);
+                        tree.AppendLine(indentText + "+-" + branch.Parent.Text(false) + "\tNem terminális");
                         DrawReduction(tree, branch, indent + 1);
                         break;
 
                     default:
                         string leaf = (string)reduction[n].Data;
-//                        container.Add(reduction[n]);
-                        tree.AppendLine(indentText + "+-" + leaf);
+                        tree.AppendLine(indentText + "+-" + leaf + "\tTerminális");
                         break;
                 }
             }
