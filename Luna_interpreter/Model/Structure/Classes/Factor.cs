@@ -8,7 +8,7 @@ namespace Luna_interpreter.Model.Structure.Classes
 {
     class Factor : Interfaces.INonTerminals
     {
-        public void Execute()
+        public void Execute(GOLD.Reduction node)
         {
             throw new NotImplementedException();
         }

@@ -21,7 +21,7 @@ namespace Luna_interpreter.Model.Structure.Context
 
         public static void Execute (Enums.eNonTerminals type)
         {
-            _strategies[type].Execute();
+            _strategies[type].Execute(GOLD.Reduction node);
         }
     }
 }

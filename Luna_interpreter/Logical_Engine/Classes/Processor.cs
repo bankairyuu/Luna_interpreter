@@ -18,7 +18,7 @@ namespace Luna_interpreter.Logical_Engine.Classes
 
         private void Process()
         {
-
+            //Model.Structure.Context.NonTerminalContext.Execute();
         }
     }
 }
