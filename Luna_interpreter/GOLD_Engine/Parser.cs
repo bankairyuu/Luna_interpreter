@@ -33,12 +33,6 @@ namespace Luna_interpreter.GOLD_Engine
             if (Parse(new StringReader(instructions)))
             {
                 string s = DrawReductionTree(Root);
-                Console.WriteLine("------------------- DEBUG -------------------");
-
-                
-
-                Console.WriteLine("------------------- DEBUG -------------------");
-
                 Logical_Engine.Classes.Processor processor = new Logical_Engine.Classes.Processor(Root);
 
                 return s;
@@ -54,7 +48,7 @@ namespace Luna_interpreter.GOLD_Engine
             //This procedure starts the recursion that draws the parse tree.
             StringBuilder tree = new StringBuilder();
 
-            tree.AppendLine("+-" + Root.Parent.Text(false));
+            tree.AppendLine("Non Terminal\t+-" + Root.Parent.Text(false));
             DrawReduction(tree, Root, 1);
 
             return tree.ToString();
@@ -81,13 +75,13 @@ namespace Luna_interpreter.GOLD_Engine
                     case GOLD.SymbolType.Nonterminal:
                         GOLD.Reduction branch = (GOLD.Reduction)reduction[n].Data;
 
-                        tree.AppendLine(indentText + "+-" + branch.Parent.Text(false) + "\tNem terminális");
+                        tree.AppendLine("Non Terminal\t" + indentText + "+-" + branch.Parent.Text(false));
                         DrawReduction(tree, branch, indent + 1);
                         break;
 
                     default:
                         string leaf = (string)reduction[n].Data;
-                        tree.AppendLine(indentText + "+-" + leaf + "\tTerminális");
+                        tree.AppendLine("Terminal\t" + indentText + " + -" + leaf);
                         break;
                 }
             }

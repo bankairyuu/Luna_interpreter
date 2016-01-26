@@ -48,6 +48,15 @@
   <ItemGroup>
     <Compile Include="GOLD_Engine\Parser.cs" />
     <Compile Include="Logical_Engine\Classes\Processor.cs" />
+    <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\Structure\Classes\Expression.cs" />
+    <Compile Include="Model\Structure\Classes\Factor.cs" />
+    <Compile Include="Model\Structure\Classes\ProgramLine.cs" />
+    <Compile Include="Model\Structure\Classes\SimpleExpression.cs" />
+    <Compile Include="Model\Structure\Classes\Term.cs" />
+    <Compile Include="Model\Structure\Context\NonTerminalContext.cs" />
+    <Compile Include="Model\Structure\Interfaces\INonTerminals.cs" />
+    <Compile Include="Model\Structure\Interfaces\ITerminals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,9 +67,6 @@
   <ItemGroup>
     <Folder Include="Logical_Engine\Interfaces\" />
     <Folder Include="Model\Container\" />
-    <Folder Include="Model\Structure\Classes\" />
-    <Folder Include="Model\Structure\Context\" />
-    <Folder Include="Model\Structure\Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
