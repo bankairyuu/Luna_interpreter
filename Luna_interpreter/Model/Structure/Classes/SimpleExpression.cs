@@ -93,7 +93,85 @@ namespace Luna_interpreter.Model.Structure.Classes
 
         public object Operation(object operand1, string operatorString, object operand2)
         {
-            throw new NotImplementedException();
+            if (!Operators.Contains(operatorString))
+                throw new Exception("ERROR: Operator string interpret failure");
+
+            if (operand1.GetType() == operand2.GetType())
+            {
+                if (operand1 is Int32)
+                {
+                    switch (operatorString)
+                    {
+                        case "+":
+                            operand1 = Int32.Parse(operand1.ToString()) + Int32.Parse(operand2.ToString());
+                            return operand1;
+                        case "-":
+                            operand1 = Int32.Parse(operand1.ToString()) - Int32.Parse(operand2.ToString());
+                            return operand1;
+                        case "or":
+                            throw new InvalidOperationException();
+                        case "|":
+                            operand1 = Int32.Parse(operand1.ToString()) | Int32.Parse(operand2.ToString());
+                            return operand1;
+                        case "||":
+                            throw new InvalidOperationException();
+                        case "xor":
+                            operand1 = Int32.Parse(operand1.ToString()) ^ Int32.Parse(operand2.ToString());
+                            return operand1;
+                        default:
+                            return null;
+                    }
+                }
+                else if (operand1 is float)
+                {
+                    switch (operatorString)
+                    {
+                        case "+":
+                            operand1 = float.Parse(operand1.ToString()) + float.Parse(operand2.ToString());
+                            return operand1;
+                        case "-":
+                            operand1 = float.Parse(operand1.ToString()) - float.Parse(operand2.ToString());
+                            return operand1;
+                        case "or":
+                            throw new InvalidOperationException();
+                        case "|":
+                            throw new InvalidOperationException();
+                        case "||":
+                            throw new InvalidOperationException();
+                        case "xor":
+                            throw new InvalidOperationException();
+                        default:
+                            return null;
+                    }
+                }
+                else if (operand1 is string)
+                {
+                    switch (operatorString)
+                    {
+                        case "+":
+                            operand1 = operand1.ToString() + operand2.ToString();
+                            return operand1;
+                        case "-":
+                            throw new InvalidOperationException();
+                        case "or":
+                            throw new InvalidOperationException();
+                        case "|":
+                            throw new InvalidOperationException();
+                        case "||":
+                            throw new InvalidOperationException();
+                        case "xor":
+                            throw new InvalidOperationException();
+                        default:
+                            return null;
+                    }
+                }
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+
+            return operand1;
         }
     }
 }

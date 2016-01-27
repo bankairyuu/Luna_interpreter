@@ -92,7 +92,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
 
                 object returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
-                Console.WriteLine("Term value: " + returnValue + " type: " + returnValue.GetType());
+                Console.WriteLine("Expression value: " + returnValue + " type: " + returnValue.GetType());
                 return returnValue;
             }
         }
@@ -130,8 +130,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                                 return false;
                             }
                         case "<>":
-
-                            break;
+                            throw new NotImplementedException();
                         case "!=":
                             if (Int32.Parse(operand1.ToString()) != Int32.Parse(operand2.ToString()))
                             {
@@ -234,8 +233,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                                 return false;
                             }
                         case "<>":
-
-                            break;
+                            throw new NotImplementedException();
                         case "!=":
                             if (float.Parse(operand1.ToString()) != float.Parse(operand2.ToString()))
                             {
@@ -314,7 +312,50 @@ namespace Luna_interpreter.Model.Structure.Classes
                 }
                 else if (operand1 is string)
                 {
-
+                    switch (operatorString)
+                    {
+                        case "=":
+                            operand1 = operand2;
+                            return operand1;
+                        case "==":
+                            if (operand1.ToString() == operand2.ToString())
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        case "equals":
+                            if (operand1.ToString() == operand2.ToString())
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        case "<>":
+                            throw new NotImplementedException();
+                        case "!=":
+                            if (operand1.ToString() != operand2.ToString())
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        case "not =":
+                            if (operand1.ToString() != operand2.ToString())
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                    }
                 }
             }
             else

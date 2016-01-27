@@ -16,15 +16,15 @@ namespace Luna_interpreter.Model.Structure.Classes
             switch (ntt)
             {
                 case Enums.eNonTerminals.Expression:
-                    Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
-                    break;
+                    object returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
+                    Console.WriteLine("################################################################");
+                    Console.WriteLine("# Programline value: " + returnValue + " type: " + returnValue.GetType());
+                    Console.WriteLine("################################################################" + Environment.NewLine);
+                    return returnValue;
 
                 default:
                     throw new NotImplementedException();
             }
-
-            Console.WriteLine(Environment.NewLine + "(AAA) Program Line (AAA)" + Environment.NewLine);
-            return null;
         }
 
         public object Operation(object operand1, string operatorString, object operand2)

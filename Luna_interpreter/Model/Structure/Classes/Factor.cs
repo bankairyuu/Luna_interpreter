@@ -128,16 +128,13 @@ namespace Luna_interpreter.Model.Structure.Classes
                     case "-":
                         return Int32.Parse(operand1.ToString()) * -1;
                     case "+":
-
-                        break;
+                        throw new NotImplementedException();
                     case "not":
-
-                        break;
+                        throw new NotImplementedException();
                     case "!":
-
-                        break;
+                        throw new NotImplementedException();
                     default:
-                        return null;
+                        throw new NotImplementedException();
                 }
             }
             else if (operand1 is float)
@@ -147,23 +144,23 @@ namespace Luna_interpreter.Model.Structure.Classes
                     case "-":
                         return float.Parse(operand1.ToString()) * -1;
                     case "+":
-
-                        break;
+                        throw new NotImplementedException();
                     case "not":
-
-                        break;
+                        throw new NotImplementedException();
                     case "!":
-
-                        break;
+                        throw new NotImplementedException();
                     default:
-                        return null;
+                        throw new NotImplementedException();
                 }
             }
             else if (operand1 is string)
             {
-
+                throw new NotImplementedException();
             }
-            return operand1;
+            else
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
