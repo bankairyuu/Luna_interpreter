@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="GOLD_Engine\Parser.cs" />
     <Compile Include="Logical_Engine\Classes\Processor.cs" />
+    <Compile Include="Model\Container\Container.cs" />
     <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\Structure\Classes\Expression.cs" />
     <Compile Include="Model\Structure\Classes\Factor.cs" />
@@ -66,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logical_Engine\Interfaces\" />
-    <Folder Include="Model\Container\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

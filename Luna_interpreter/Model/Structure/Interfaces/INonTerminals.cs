@@ -8,6 +8,8 @@ namespace Luna_interpreter.Model.Structure.Interfaces
 {
     interface INonTerminals
     {
-        void Execute(GOLD.Reduction node);
+        object Execute(GOLD.Reduction node);
+
+        object Operation(object operand1, string operatorString, object operand2);
     }
 }
