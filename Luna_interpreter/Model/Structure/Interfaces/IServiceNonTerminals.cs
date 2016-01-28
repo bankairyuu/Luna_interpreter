@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Luna_interpreter.Model.Structure.Interfaces
 {
-    interface ITerminals
+    interface IServiceNonTerminals
     {
     }
 }

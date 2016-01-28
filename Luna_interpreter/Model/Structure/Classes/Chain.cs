@@ -33,7 +33,11 @@ namespace Luna_interpreter.Model.Structure.Classes
 
                             if (_operand1 == null)
                             {
-                                _operand1 = Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data);
+//                                _operand1 = Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data);
+                                // _operand1-re megnézni, hogy ilyen objektum van-e, majd ha van, akkor továbbmenni a második operandusban megadott fieldre
+                                // ez a bejárás már nem úgy fog kinézni, mint eddig, csak hasonlítani fog rá!!!!
+                                // _operand2 létezését a kapott objektumban vizsgálni, majd az egyel alacsonyabb szintre úgy továbbugrani, hogy viszem magammal azt az adott
+                                // operand2-es értéket, egyel lejjebb operand 1-ként
                             }
                             else
                             {
@@ -74,7 +78,26 @@ namespace Luna_interpreter.Model.Structure.Classes
 
         public object Operation(object operand1, string operatorString, object operand2)
         {
-            throw new NotImplementedException();
+            return null;
+        }
+
+        private bool GetData(object operand)
+        {
+            try
+            {
+                var client = new ManagerService.ManagerServiceClient();
+
+                client.ClientCredentials.UserName.UserName = "test";
+                client.ClientCredentials.UserName.Password = "test";
+
+                
+
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
+            return false;
         }
     }
 }

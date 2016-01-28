@@ -62,7 +62,7 @@
     <Compile Include="Model\Structure\Classes\Term.cs" />
     <Compile Include="Model\Structure\Context\NonTerminalContext.cs" />
     <Compile Include="Model\Structure\Interfaces\INonTerminals.cs" />
-    <Compile Include="Model\Structure\Interfaces\ITerminals.cs" />
+    <Compile Include="Model\Structure\Interfaces\IServiceNonTerminals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\LocationService\Reference.cs">
@@ -75,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ServiceHandler\ServiceHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
