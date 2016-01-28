@@ -50,6 +50,9 @@
     <Compile Include="Logical_Engine\Classes\Processor.cs" />
     <Compile Include="Model\Container\Container.cs" />
     <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\Structure\Classes\Boolean.cs" />
+    <Compile Include="Model\Structure\Classes\Chain.cs" />
+    <Compile Include="Model\Structure\Classes\DateTimeLiteral.cs" />
     <Compile Include="Model\Structure\Classes\Expression.cs" />
     <Compile Include="Model\Structure\Classes\Factor.cs" />
     <Compile Include="Model\Structure\Classes\ProgramLine.cs" />
