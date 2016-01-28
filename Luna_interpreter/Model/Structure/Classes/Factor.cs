@@ -36,9 +36,46 @@ namespace Luna_interpreter.Model.Structure.Classes
                 // zárójel és benne egy expression van
                 // az expressiont kiértékelem és azzal majd valamit kezdek
 
+                string  _operator1 = null
+                    ,   _operator2 = null
+                    ;
+                object _operand = null;
 
+                for (int i = 0; i < node.Count(); i++)
+                {
+                    switch (node[i].Type())
+                    {
+                        case GOLD.SymbolType.Nonterminal: // Nemterminálisok vizsgálata
 
+                            string type = Regex.Replace(node[i].Parent.ToString(), "[^0-9a-zA-Z]+", "");
+                            Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
+                            
+                            _operand = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[i].Data);
+                            
+                            break;
 
+                        case GOLD.SymbolType.Error:
+                            Console.WriteLine("ERROR in Logical_Engine.Classes.Processor.ProcessTree");
+                            break;
+
+                        default:
+                            // Terminálisok vizsgálata - itt operátor jel
+                            if (_operator1 == null)
+                            {
+                                _operator1 = node[i].Data as string;
+                            }
+                            else
+                            {
+                                _operator2 = node[i].Data as string;
+                            }
+                            break;
+                    }
+                }
+
+                if (_operator1 != null && _operator2 == null)
+                    throw new OperationCanceledException("Missing bracket(s)");
+                Console.WriteLine("Expression value: " + _operand + " type: " + _operand.GetType());
+                return _operand;
             }
             else if (node.Count() == 2)
             {

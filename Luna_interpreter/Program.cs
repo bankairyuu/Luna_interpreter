@@ -10,7 +10,7 @@ namespace Luna_interpreter
             if (parser.Setup())
             {
                 Console.WriteLine(Environment.NewLine + "\t---------\tParse Tree\t---------"+ Environment.NewLine);
-                Console.WriteLine(parser.Parsing("-5 + -15 == -20"));
+                Console.WriteLine(parser.Parsing("((-5 + -15) * 5) <= -20 * (2 + 3)"));
                 //                Console.WriteLine();
                 //                Console.WriteLine(parser.Parsing("x != D.C(h)"));
                 Console.WriteLine(Environment.NewLine + "\t---------\tParse Tree\t---------" + Environment.NewLine);
