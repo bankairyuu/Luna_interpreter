@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" />
+  <xs:complexType name="ArrayOfWorkTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkTime" nillable="true" type="tns:WorkTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkTime" nillable="true" type="tns:ArrayOfWorkTime" />
+  <xs:complexType name="WorkTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Absences" nillable="true" type="tns:ArrayOfAbsence" />
+      <xs:element minOccurs="0" name="From" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="To" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:WorkTimeType" />
+      <xs:element minOccurs="0" name="WorkforceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkTime" nillable="true" type="tns:WorkTime" />
+  <xs:complexType name="ArrayOfAbsence">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Absence" nillable="true" type="tns:Absence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAbsence" nillable="true" type="tns:ArrayOfAbsence" />
+  <xs:complexType name="Absence">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="From" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="To" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:AbsenceType" />
+      <xs:element minOccurs="0" name="WorkTimeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Absence" nillable="true" type="tns:Absence" />
+  <xs:complexType name="AbsenceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbsenceType" nillable="true" type="tns:AbsenceType" />
+  <xs:complexType name="WorkTimeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkTimeType" nillable="true" type="tns:WorkTimeType" />
+  <xs:complexType name="ArrayOfDateResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DateResult" nillable="true" type="tns:DateResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDateResult" nillable="true" type="tns:ArrayOfDateResult" />
+  <xs:complexType name="DateResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="From" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PartialWorkforces" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="To" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:AbsenceType" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Workforces" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="WtType" nillable="true" type="tns:WorkTimeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateResult" nillable="true" type="tns:DateResult" />
+  <xs:complexType name="ArrayOfDateInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DateInterval" nillable="true" type="tns:DateInterval" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDateInterval" nillable="true" type="tns:ArrayOfDateInterval" />
+  <xs:complexType name="DateInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="From" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="To" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateInterval" nillable="true" type="tns:DateInterval" />
+  <xs:complexType name="ArrayOfWorkTimeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkTimeType" nillable="true" type="tns:WorkTimeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkTimeType" nillable="true" type="tns:ArrayOfWorkTimeType" />
+  <xs:complexType name="ArrayOfShiftTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShiftTemplate" nillable="true" type="tns:ShiftTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShiftTemplate" nillable="true" type="tns:ArrayOfShiftTemplate" />
+  <xs:complexType name="ShiftTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Duration" type="ser:duration" />
+      <xs:element minOccurs="0" name="From" type="ser:duration" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShiftTemplate" nillable="true" type="tns:ShiftTemplate" />
+  <xs:complexType name="ArrayOfSchedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Schedule" nillable="true" type="tns:Schedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSchedule" nillable="true" type="tns:ArrayOfSchedule" />
+  <xs:complexType name="Schedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="From" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="To" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="WorkPlace" nillable="true" type="q3:WorkPlace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Schedule" nillable="true" type="tns:Schedule" />
+  <xs:complexType name="ArrayOfReservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reservation" nillable="true" type="tns:Reservation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReservation" nillable="true" type="tns:ArrayOfReservation" />
+  <xs:complexType name="Reservation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignmentTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EquipmentId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FinishedTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsDelayed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProcessInstanceId" type="xs:int" />
+      <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserTaskId" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkforceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reservation" nillable="true" type="tns:Reservation" />
+  <xs:complexType name="Prediction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Duration" type="ser:duration" />
+      <xs:element minOccurs="0" name="UserTask" nillable="true" type="tns:UserTask" />
+      <xs:element minOccurs="0" name="UserTaskId" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="Workforce" nillable="true" type="q4:Workforce" />
+      <xs:element minOccurs="0" name="WorkforceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Prediction" nillable="true" type="tns:Prediction" />
+  <xs:complexType name="UserTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserTask" nillable="true" type="tns:UserTask" />
+  <xs:complexType name="ArrayOfPrediction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Prediction" nillable="true" type="tns:Prediction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrediction" nillable="true" type="tns:ArrayOfPrediction" />
+  <xs:complexType name="ArrayOfProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Process" nillable="true" type="tns:Process" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcess" nillable="true" type="tns:ArrayOfProcess" />
+  <xs:complexType name="Process">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Process" nillable="true" type="tns:Process" />
+  <xs:complexType name="ArrayOfUserTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserTask" nillable="true" type="tns:UserTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserTask" nillable="true" type="tns:ArrayOfUserTask" />
+  <xs:complexType name="ArrayOfAbsenceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AbsenceType" nillable="true" type="tns:AbsenceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAbsenceType" nillable="true" type="tns:ArrayOfAbsenceType" />
+</xs:schema>

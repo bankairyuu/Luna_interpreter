@@ -19,7 +19,7 @@ namespace Luna_interpreter.Model.Structure.Classes
 
                 string _operator = null;
                 object _operand1 = null
-                    , _operand2 = null
+                    ,  _operand2 = null
                     ;
 
                 for (int i = 0; i < node.Count(); i++)
@@ -66,7 +66,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 string type = Regex.Replace(node[0].Parent.ToString(), "[^0-9a-zA-Z]+", "");
                 Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
 
-                object returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
+                object returnValue = Context.NonTerminalContext.Execute(ntt, (Reduction)node[0].Data);
                 Console.WriteLine("Expression value: " + returnValue + " type: " + returnValue.GetType());
                 return returnValue;
             }

@@ -23,6 +23,7 @@ namespace Luna_interpreter.Model
             FunctionParameters,
             ExpressionList,
             Statement,
+            DateTimeLiteral,
 
             undefined
         }

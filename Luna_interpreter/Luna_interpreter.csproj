@@ -38,6 +38,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,8 +50,8 @@
   <ItemGroup>
     <Compile Include="GOLD_Engine\Parser.cs" />
     <Compile Include="Logical_Engine\Classes\Processor.cs" />
-    <Compile Include="Model\Container\Container.cs" />
     <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\Services\Services.cs" />
     <Compile Include="Model\Structure\Classes\Chain.cs" />
     <Compile Include="Model\Structure\Classes\DateTimeLiteral.cs" />
     <Compile Include="Model\Structure\Classes\Element.cs" />
@@ -63,13 +65,232 @@
     <Compile Include="Model\Structure\Interfaces\ITerminals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\LocationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ManagerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="GOLD_Engine\lang0.51.egt" />
+    <None Include="Service References\LocationService\item.wsdl" />
+    <None Include="Service References\LocationService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationService\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LocationService\LocationService.wsdl" />
+    <None Include="Service References\LocationService\Luna_interpreter.LocationService.Key.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LocationService\Luna_interpreter.LocationService.Location.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LocationService\Luna_interpreter.LocationService.LocationEntry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LocationService\Luna_interpreter.LocationService.Tag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Absence.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.AbsenceType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.CompanyContact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Component.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.ComponentCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.DateInterval.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.DateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.DynamicEquipmentGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.DynamicWorkforceGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Equipment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.EquipmentGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Hierarchy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.HierarchyTree.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.LoginData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Material.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.MaterialCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Permission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Prediction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Process.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.PropertyType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.PropertyValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.ProviderCompany.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Reservation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Role.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Schedule.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Service.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.ServiceType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.ShiftTemplate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Skill.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.SkillGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.UserTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.Workforce.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.WorkforceGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.WorkPlace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.WorkTime.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\Luna_interpreter.ManagerService.WorkTimeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logical_Engine\Interfaces\" />
+    <Folder Include="Model\Container\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LocationService\" />
+    <WCFMetadataStorage Include="Service References\ManagerService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LocationService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LocationService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LocationService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LocationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManagerService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManagerService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManagerService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManagerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts" />
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.LocationEntries" />
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILocationService_GetPossibleTagKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPossibleTagKeys" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetPossibleTagKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPossibleTagKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetKeyByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyByName" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetKeyByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetDoubleFromCoordinate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoubleFromCoordinate" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetDoubleFromCoordinate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoubleFromCoordinateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetTagsForLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagsForLocation" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetTagsForLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagsForLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_AddTag_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTag" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_AddTag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_UpdateTag_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTag" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_UpdateTag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_DeleteTag_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTag" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_DeleteTag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_AddLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLocation" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_AddLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_SearchLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLocations" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_SearchLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetAllLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocations" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetAllLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_UpdateLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLocation" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_UpdateLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_DeleteLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLocation" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_DeleteLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocation" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_AddLocationEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLocationEntry" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_AddLocationEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLocationEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetAllLocationEntries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocationEntries" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetAllLocationEntries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocationEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesInInterval_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesInInterval" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesInInterval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesInIntervalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesFrom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesFrom" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesFrom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesFromResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesTo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesTo" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesTo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesToResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesForLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesForLocation" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesForLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesForLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesForLocationInInterval_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesForLocationInInterval" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesForLocationInInterval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesForLocationInIntervalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesForLocationFrom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesForLocationFrom" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesForLocationFrom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesForLocationFromResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesForLocationTo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesForLocationTo" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLocationEntriesForLocationTo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationEntriesForLocationToResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetEntriesForObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntriesForObject" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetEntriesForObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntriesForObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLastEntryForObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastEntryForObject" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_GetLastEntryForObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastEntryForObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_DeleteLocationEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLocationEntry" />
+  </wsdl:message>
+  <wsdl:message name="ILocationService_DeleteLocationEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLocationEntryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILocationService">
+    <wsdl:operation name="GetPossibleTagKeys">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetPossibleTagKeys" message="tns:ILocationService_GetPossibleTagKeys_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetPossibleTagKeysResponse" message="tns:ILocationService_GetPossibleTagKeys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyByName">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetKeyByName" message="tns:ILocationService_GetKeyByName_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetKeyByNameResponse" message="tns:ILocationService_GetKeyByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoubleFromCoordinate">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetDoubleFromCoordinate" message="tns:ILocationService_GetDoubleFromCoordinate_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetDoubleFromCoordinateResponse" message="tns:ILocationService_GetDoubleFromCoordinate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagsForLocation">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetTagsForLocation" message="tns:ILocationService_GetTagsForLocation_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetTagsForLocationResponse" message="tns:ILocationService_GetTagsForLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTag">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/AddTag" message="tns:ILocationService_AddTag_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/AddTagResponse" message="tns:ILocationService_AddTag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTag">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/UpdateTag" message="tns:ILocationService_UpdateTag_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/UpdateTagResponse" message="tns:ILocationService_UpdateTag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTag">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/DeleteTag" message="tns:ILocationService_DeleteTag_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/DeleteTagResponse" message="tns:ILocationService_DeleteTag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLocation">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/AddLocation" message="tns:ILocationService_AddLocation_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/AddLocationResponse" message="tns:ILocationService_AddLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLocations">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/SearchLocations" message="tns:ILocationService_SearchLocations_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/SearchLocationsResponse" message="tns:ILocationService_SearchLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocations">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetAllLocations" message="tns:ILocationService_GetAllLocations_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetAllLocationsResponse" message="tns:ILocationService_GetAllLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLocation">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/UpdateLocation" message="tns:ILocationService_UpdateLocation_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/UpdateLocationResponse" message="tns:ILocationService_UpdateLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLocation">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/DeleteLocation" message="tns:ILocationService_DeleteLocation_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/DeleteLocationResponse" message="tns:ILocationService_DeleteLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocation">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetLocation" message="tns:ILocationService_GetLocation_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetLocationResponse" message="tns:ILocationService_GetLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLocationEntry">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/AddLocationEntry" message="tns:ILocationService_AddLocationEntry_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/AddLocationEntryResponse" message="tns:ILocationService_AddLocationEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocationEntries">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetAllLocationEntries" message="tns:ILocationService_GetAllLocationEntries_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetAllLocationEntriesResponse" message="tns:ILocationService_GetAllLocationEntries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationEntriesInInterval">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesInInterval" message="tns:ILocationService_GetLocationEntriesInInterval_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesInIntervalResponse" message="tns:ILocationService_GetLocationEntriesInInterval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationEntriesFrom">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesFrom" message="tns:ILocationService_GetLocationEntriesFrom_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesFromResponse" message="tns:ILocationService_GetLocationEntriesFrom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationEntriesTo">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesTo" message="tns:ILocationService_GetLocationEntriesTo_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesToResponse" message="tns:ILocationService_GetLocationEntriesTo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationEntriesForLocation">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesForLocation" message="tns:ILocationService_GetLocationEntriesForLocation_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesForLocationResponse" message="tns:ILocationService_GetLocationEntriesForLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationEntriesForLocationInInterval">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesForLocationInInterval" message="tns:ILocationService_GetLocationEntriesForLocationInInterval_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesForLocationInIntervalResponse" message="tns:ILocationService_GetLocationEntriesForLocationInInterval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationEntriesForLocationFrom">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesForLocationFrom" message="tns:ILocationService_GetLocationEntriesForLocationFrom_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesForLocationFromResponse" message="tns:ILocationService_GetLocationEntriesForLocationFrom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationEntriesForLocationTo">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesForLocationTo" message="tns:ILocationService_GetLocationEntriesForLocationTo_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetLocationEntriesForLocationToResponse" message="tns:ILocationService_GetLocationEntriesForLocationTo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntriesForObject">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetEntriesForObject" message="tns:ILocationService_GetEntriesForObject_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetEntriesForObjectResponse" message="tns:ILocationService_GetEntriesForObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastEntryForObject">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/GetLastEntryForObject" message="tns:ILocationService_GetLastEntryForObject_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/GetLastEntryForObjectResponse" message="tns:ILocationService_GetLastEntryForObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLocationEntry">
+      <wsdl:input wsam:Action="http://tempuri.org/ILocationService/DeleteLocationEntry" message="tns:ILocationService_DeleteLocationEntry_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/ILocationService/DeleteLocationEntryResponse" message="tns:ILocationService_DeleteLocationEntry_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

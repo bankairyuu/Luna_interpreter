@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.LocationEntries" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.LocationEntries" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts" />
+  <xs:complexType name="WorkforceLocationEntry">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedLocationEntryOfWorkforcefBCf7RRr">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkforceLocationEntry" nillable="true" type="tns:WorkforceLocationEntry" />
+  <xs:complexType name="TypedLocationEntryOfWorkforcefBCf7RRr">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TypedLocationEntryOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.LocationEntries" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Workforce" Namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts" base="q1:LocationEntry">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" minOccurs="0" name="Object" nillable="true" type="q2:Workforce" />
+          <xs:element minOccurs="0" name="ObjectId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TypedLocationEntryOfWorkforcefBCf7RRr" nillable="true" type="tns:TypedLocationEntryOfWorkforcefBCf7RRr" />
+  <xs:complexType name="EquipmentLocationEntry">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedLocationEntryOfEquipmentfBCf7RRr">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EquipmentLocationEntry" nillable="true" type="tns:EquipmentLocationEntry" />
+  <xs:complexType name="TypedLocationEntryOfEquipmentfBCf7RRr">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TypedLocationEntryOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.LocationEntries" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Equipment" Namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts" base="q3:LocationEntry">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" minOccurs="0" name="Object" nillable="true" type="q4:Equipment" />
+          <xs:element minOccurs="0" name="ObjectId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TypedLocationEntryOfEquipmentfBCf7RRr" nillable="true" type="tns:TypedLocationEntryOfEquipmentfBCf7RRr" />
+  <xs:complexType name="SimpleUserTaskLocationEntry">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedLocationEntryOfSimpleUserTaskfBCf7RRr">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SimpleUserTaskLocationEntry" nillable="true" type="tns:SimpleUserTaskLocationEntry" />
+  <xs:complexType name="TypedLocationEntryOfSimpleUserTaskfBCf7RRr">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TypedLocationEntryOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.LocationEntries" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SimpleUserTask" Namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts" base="q5:LocationEntry">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" minOccurs="0" name="Object" nillable="true" type="q6:SimpleUserTask" />
+          <xs:element minOccurs="0" name="ObjectId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TypedLocationEntryOfSimpleUserTaskfBCf7RRr" nillable="true" type="tns:TypedLocationEntryOfSimpleUserTaskfBCf7RRr" />
+  <xs:complexType name="WorkPlaceLocationEntry">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypedLocationEntryOfWorkPlacefBCf7RRr">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkPlaceLocationEntry" nillable="true" type="tns:WorkPlaceLocationEntry" />
+  <xs:complexType name="TypedLocationEntryOfWorkPlacefBCf7RRr">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TypedLocationEntryOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.LocationEntries" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="WorkPlace" Namespace="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts" base="q7:LocationEntry">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FlowService.LocationServices.DataContracts.Objects" minOccurs="0" name="Object" nillable="true" type="q8:WorkPlace" />
+          <xs:element minOccurs="0" name="ObjectId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TypedLocationEntryOfWorkPlacefBCf7RRr" nillable="true" type="tns:TypedLocationEntryOfWorkPlacefBCf7RRr" />
+</xs:schema>

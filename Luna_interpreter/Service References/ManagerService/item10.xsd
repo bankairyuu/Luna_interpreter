@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" />
+  <xs:complexType name="Service">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" base="q1:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Company" nillable="true" type="tns:ProviderCompany" />
+          <xs:element minOccurs="0" name="ServiceType" nillable="true" type="tns:ServiceType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Service" nillable="true" type="tns:Service" />
+  <xs:complexType name="ProviderCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProviderCompany" nillable="true" type="tns:ProviderCompany" />
+  <xs:complexType name="ServiceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceType" nillable="true" type="tns:ServiceType" />
+  <xs:complexType name="ArrayOfProviderCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProviderCompany" nillable="true" type="tns:ProviderCompany" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProviderCompany" nillable="true" type="tns:ArrayOfProviderCompany" />
+  <xs:complexType name="CompanyContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyContact" nillable="true" type="tns:CompanyContact" />
+  <xs:complexType name="ArrayOfCompanyContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyContact" nillable="true" type="tns:CompanyContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyContact" nillable="true" type="tns:ArrayOfCompanyContact" />
+  <xs:complexType name="ArrayOfService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Service" nillable="true" type="tns:Service" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfService" nillable="true" type="tns:ArrayOfService" />
+  <xs:complexType name="ArrayOfServiceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceType" nillable="true" type="tns:ServiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceType" nillable="true" type="tns:ArrayOfServiceType" />
+</xs:schema>

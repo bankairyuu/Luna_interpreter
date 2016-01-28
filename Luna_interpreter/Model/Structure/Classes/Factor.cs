@@ -74,7 +74,7 @@ namespace Luna_interpreter.Model.Structure.Classes
 
                 if (_operator1 != null && _operator2 == null)
                     throw new OperationCanceledException("Missing bracket(s)");
-                Console.WriteLine("Expression value: " + _operand + " type: " + _operand.GetType());
+                Console.WriteLine("Expression value: " + _operand + "\ttype: " + _operand.GetType());
                 return _operand;
             }
             else if (node.Count() == 2)
@@ -110,7 +110,7 @@ namespace Luna_interpreter.Model.Structure.Classes
 
                 if (_operator != null)
                     _operand = Operation(_operand, _operator, null);
-                Console.WriteLine("Factor value: " + _operand + " type: " + _operand.GetType());
+                Console.WriteLine("Factor value: " + _operand + "\ttype: " + _operand.GetType());
                 return _operand;
 
             }
@@ -124,19 +124,19 @@ namespace Luna_interpreter.Model.Structure.Classes
                     if (node[0].Parent.ToString().Equals("NumberLiteral"))
                     {
                         returnValue = Int32.Parse(node[0].Data.ToString());
-                        Console.WriteLine("Factor value: " + returnValue + " type: " + returnValue.GetType());
+                        Console.WriteLine("Factor value: " + returnValue + "\ttype: " + returnValue.GetType());
                         return Int32.Parse(node[0].Data.ToString());
                     }
                     else if (node[0].Parent.ToString().Equals("RealLiteral"))
                     {
                         returnValue = float.Parse(node[0].Data.ToString());
-                        Console.WriteLine("Factor value: " + returnValue + " type: " + returnValue.GetType());
+                        Console.WriteLine("Factor value: " + returnValue + "\ttype: " + returnValue.GetType());
                         return float.Parse(node[0].Data.ToString());
                     }
                     else if (node[0].Parent.ToString().Equals("StringLiteral"))
                     {
                         returnValue = node[0].Data.ToString();
-                        Console.WriteLine("Factor value: " + returnValue + " type: " + returnValue.GetType());
+                        Console.WriteLine("Factor value: " + returnValue + "\ttype: " + returnValue.GetType());
                         return node[0].Data.ToString();
                     }
                     else if (node[0].Parent.ToString().Equals("BooleanLiteral"))
@@ -156,7 +156,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                         Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
 
                         returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
-                        Console.WriteLine("Factor value: " + returnValue + " type: " + returnValue.GetType());
+                        Console.WriteLine("Factor value: " + returnValue + "\ttype: " + returnValue.GetType());
                         return returnValue;
                     }
                     else

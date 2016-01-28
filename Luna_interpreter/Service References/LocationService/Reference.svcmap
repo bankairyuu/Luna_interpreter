@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce4808e1-162b-4830-8843-fd7bc8db58c9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="9464b772-b121-4f65-80c4-01df3e95a547" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?wsdl=wsdl0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="49ba1b18-c002-4c1f-837d-35448c06f551" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="02228bc6-e189-42ea-9757-ff01fa158b29" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd4" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="89938d7b-1144-4f6a-b557-e795b4a9473f" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="9281c432-af07-4cb7-8b71-f1a2a98c9cf9" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd2" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="a4c857e0-4951-4d93-b42a-25e4fcb9b5c4" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd0" />
+    <MetadataFile FileName="LocationService.wsdl" MetadataType="Wsdl" ID="74207ebe-fb88-4f9e-b8fc-d91c165d1115" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?wsdl" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="a5e8d348-1483-4a27-89ae-110a0399181f" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/LocationService/?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

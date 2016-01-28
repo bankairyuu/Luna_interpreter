@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" />
+  <xs:complexType name="ComponentCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasSerial" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="PossibleProperties" nillable="true" type="q1:ArrayOfPropertyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentCategory" nillable="true" type="tns:ComponentCategory" />
+  <xs:complexType name="Component">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" base="q2:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category" nillable="true" type="tns:ComponentCategory" />
+          <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Component" nillable="true" type="tns:Component" />
+  <xs:complexType name="ArrayOfComponent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Component" nillable="true" type="tns:Component" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComponent" nillable="true" type="tns:ArrayOfComponent" />
+  <xs:complexType name="ArrayOfComponentCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComponentCategory" nillable="true" type="tns:ComponentCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComponentCategory" nillable="true" type="tns:ArrayOfComponentCategory" />
+</xs:schema>

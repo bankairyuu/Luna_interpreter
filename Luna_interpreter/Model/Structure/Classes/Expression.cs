@@ -80,7 +80,7 @@ namespace Luna_interpreter.Model.Structure.Classes
 
                 if (_operator != null)
                     _operand1 = Operation(_operand1, _operator, _operand2);
-                Console.WriteLine("Expression value: " + _operand1 + " type: " + _operand1.GetType());
+                Console.WriteLine("Expression value: " + _operand1 + "\ttype: " + _operand1.GetType());
                 return _operand1;
 
             }
@@ -92,7 +92,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
 
                 object returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
-                Console.WriteLine("Expression value: " + returnValue + " type: " + returnValue.GetType());
+                Console.WriteLine("Expression value: " + returnValue + "\ttype: " + returnValue.GetType());
                 return returnValue;
             }
         }
@@ -383,10 +383,10 @@ namespace Luna_interpreter.Model.Structure.Classes
                     switch (operatorString)
                     {
                         case "=":
-                            operand1 = operand2;
+                            operand1 = operand2 as bool?;
                             return operand1;
                         case "==":
-                            if (operand1 == operand2)
+                            if (operand1 as bool? == operand2 as bool?)
                             {
                                 return true;
                             }
@@ -395,7 +395,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                                 return false;
                             }
                         case "equals":
-                            if (operand1 == operand2)
+                            if (operand1 as bool? == operand2 as bool?)
                             {
                                 return true;
                             }
@@ -404,7 +404,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                                 return false;
                             }
                         case "<>":
-                            if (operand1 != operand2)
+                            if (operand1 as bool? != operand2 as bool?)
                             {
                                 return true;
                             }
@@ -413,7 +413,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                                 return false;
                             }
                         case "!=":
-                            if (operand1 != operand2)
+                            if (operand1 as bool? != operand2 as bool?)
                             {
                                 return true;
                             }
@@ -422,7 +422,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                                 return false;
                             }
                         case "not =":
-                            if (operand1 != operand2)
+                            if (operand1 as bool? != operand2 as bool?)
                             {
                                 return true;
                             }

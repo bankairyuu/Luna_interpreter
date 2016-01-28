@@ -1,0 +1,3675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://wfe.mik.uni-pannon.hu/" elementFormDefault="qualified" targetNamespace="http://wfe.mik.uni-pannon.hu/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/FlowService.Authentication" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" />
+  <xs:element name="ListWorkTimes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkTimesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="ListWorkTimesResult" nillable="true" type="q1:ArrayOfWorkTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkTimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkTimesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="SearchWorkTimesResult" nillable="true" type="q2:ArrayOfWorkTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkforceByTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkforceByTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchWorkforceByTimeResult" nillable="true" type="q3:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewUnionWorktimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q4:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewUnionWorktimesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetNewUnionWorktimesResult" nillable="true" type="q5:ArrayOfDateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkTimesFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q6:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkTimesFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="ListWorkTimesFromWorkforceResult" nillable="true" type="q7:ArrayOfWorkTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkforceWorktime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q8:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkforceWorktimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="CountWorkforceWorktimeResult" type="q9:duration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkforceWorktimeInterval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q10:Workforce" />
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkforceWorktimeIntervalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="CountWorkforceWorktimeIntervalResult" type="q11:duration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkforceAbsence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q12:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkforceAbsenceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="CountWorkforceAbsenceResult" type="q13:duration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkforceAbsenceInterval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q14:Workforce" />
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkforceAbsenceIntervalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="CountWorkforceAbsenceIntervalResult" type="q15:duration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntersectWorkTimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q16:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntersectWorkTimesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetIntersectWorkTimesResult" nillable="true" type="q17:ArrayOfDateInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnionWorkTimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q18:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnionWorkTimesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetUnionWorkTimesResult" nillable="true" type="q19:ArrayOfDateInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplementerWorkTimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q20:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplementerWorkTimesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetComplementerWorkTimesResult" nillable="true" type="q21:ArrayOfDateInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddWorkTimeToWorkforces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="worktime" nillable="true" type="q22:WorkTime" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q23:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddWorkTimeToWorkforcesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListDayOffFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q24:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListDayOffFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="ListDayOffFromWorkforceResult" nillable="true" type="q25:ArrayOfWorkTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkTimeType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="workTimeType" nillable="true" type="q26:WorkTimeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkTimeTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateWorkTimeTypeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkTimeType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkTimeTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetWorkTimeTypeResult" nillable="true" type="q27:WorkTimeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkTimeType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkTimeTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkTimeTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkTimeTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="ListWorkTimeTypesResult" nillable="true" type="q28:ArrayOfWorkTimeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkTimeTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkTimeTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="SearchWorkTimeTypesResult" nillable="true" type="q29:ArrayOfWorkTimeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkTimeType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="workTimeType" nillable="true" type="q30:WorkTimeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkTimeTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListShiftTemplates">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListShiftTemplatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="ListShiftTemplatesResult" nillable="true" type="q31:ArrayOfShiftTemplate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchShiftTemplates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchShiftTemplatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="SearchShiftTemplatesResult" nillable="true" type="q32:ArrayOfShiftTemplate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSkill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skill" nillable="true" type="q33:Skill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSkillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateSkillResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetSkillResult" nillable="true" type="q34:Skill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListSkills">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListSkillsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListSkillsResult" nillable="true" type="q35:ArrayOfSkill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSkill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSkillResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSkill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSkillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchSkillResult" nillable="true" type="q36:ArrayOfSkill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSkill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skill" nillable="true" type="q37:Skill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSkillResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSkillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skillGroup" nillable="true" type="q38:SkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSkillGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateSkillGroupResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkillGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetSkillGroupResult" nillable="true" type="q39:SkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSkillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skillGroup" nillable="true" type="q40:SkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSkillGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSkillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSkillGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListSkillGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListSkillGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListSkillGroupsResult" nillable="true" type="q41:ArrayOfSkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSkillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSkillGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchSkillGroupResult" nillable="true" type="q42:ArrayOfSkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainedSkillGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="container" nillable="true" type="q43:SkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainedSkillGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetContainedSkillGroupsResult" nillable="true" type="q44:ArrayOfSkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainerSkillGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="contained" nillable="true" type="q45:SkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainerSkillGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetContainerSkillGroupsResult" nillable="true" type="q46:ArrayOfSkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSkillGroupToSkillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="container" nillable="true" type="q47:SkillGroup" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="contained" nillable="true" type="q48:SkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSkillGroupToSkillGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSkillGroupFromSkillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="container" nillable="true" type="q49:SkillGroup" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="contained" nillable="true" type="q50:SkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSkillGroupFromSkillGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSkillToSkillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skill" nillable="true" type="q51:Skill" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skillGroup" nillable="true" type="q52:SkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSkillToSkillGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkillsFromSkillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skillGroup" nillable="true" type="q53:SkillGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkillsFromSkillGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetSkillsFromSkillGroupResult" nillable="true" type="q54:ArrayOfSkill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwriteSkillGroupSkills">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="skillGroupId" type="xs:int" />
+        <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="skillIds" nillable="true" type="q55:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwriteSkillGroupSkillsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCredentials">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/FlowService.Authentication" minOccurs="0" name="GetCredentialsResult" nillable="true" type="q56:LoginData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkForce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q57:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkForceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateWorkForceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetWorkforceResult" nillable="true" type="q58:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q59:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchWorkforceResult" nillable="true" type="q60:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkforces">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkforcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListWorkforcesResult" nillable="true" type="q61:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSkillToWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q62:Workforce" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skill" nillable="true" type="q63:Skill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSkillToWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSkillFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q64:Workforce" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skill" nillable="true" type="q65:Skill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSkillFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwriteWorkforceSkills">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workforceId" type="xs:int" />
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="skillIds" nillable="true" type="q66:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwriteWorkforceSkillsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkillsFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q67:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkillsFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetSkillsFromWorkforceResult" nillable="true" type="q68:ArrayOfSkill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetWorkforceIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchedulesFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q69:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchedulesFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetSchedulesFromWorkforceResult" nillable="true" type="q70:ArrayOfSchedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddScheduleToWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q71:Workforce" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="schedule" nillable="true" type="q72:Schedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddScheduleToWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveScheduleFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q73:Workforce" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="schedule" nillable="true" type="q74:Schedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveScheduleFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDynamicWorkforceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="wfGroup" nillable="true" type="q75:DynamicWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDynamicWorkforceGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePredefinedWorkfoceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="WorkforceGroup" nillable="true" type="q76:PredefinedWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePredefinedWorkfoceGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePredefinedWorkfoceGroupResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDynamicWorkfoceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="WorkforceGroup" nillable="true" type="q77:DynamicWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDynamicWorkfoceGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateDynamicWorkfoceGroupResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetWorkforceGroupResult" nillable="true" type="q78:WorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicWorkforceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicWorkforceGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetDynamicWorkforceGroupResult" nillable="true" type="q79:DynamicWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceGroupType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceGroupTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetWorkforceGroupTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkforceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="WorkforceGroup" nillable="true" type="q80:WorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkforceGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkforceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkforceGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkforceGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkforceGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListWorkforceGroupsResult" nillable="true" type="q81:ArrayOfWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkforceGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkforceGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchWorkforceGroupsResult" nillable="true" type="q82:ArrayOfWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddWorkforceGroupToGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="childWorkforceGroup" nillable="true" type="q83:WorkforceGroup" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="parentWorkforceGroup" nillable="true" type="q84:WorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddWorkforceGroupToGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainedWorkforceGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainedWorkforceGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetContainedWorkforceGroupsResult" nillable="true" type="q85:ArrayOfWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainersWorkforceGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainersWorkforceGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetContainersWorkforceGroupsResult" nillable="true" type="q86:ArrayOfWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorkforceGroupFromGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="toRemoveWorkforceGroup" nillable="true" type="q87:WorkforceGroup" />
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="parentWorkforceGroup" nillable="true" type="q88:WorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorkforceGroupFromGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddWorkforceToPredefinedWorkforceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q89:Workforce" />
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="WorkforceGroup" nillable="true" type="q90:PredefinedWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddWorkforceToPredefinedWorkforceGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEquipmentFromPredefinedWorkforceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q91:Workforce" />
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="WorkforceGroup" nillable="true" type="q92:PredefinedWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEquipmentFromPredefinedWorkforceGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPredefinedWorkforceGroupContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPredefinedWorkforceGroupContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetPredefinedWorkforceGroupContentResult" nillable="true" type="q93:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwritePredefinedWorkforceGroupWorkforces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WorkforceGroupId" type="xs:int" />
+        <xs:element xmlns:q94="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="workforceIds" nillable="true" type="q94:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwritePredefinedWorkforceGroupWorkforcesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkPlace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workPlace" nillable="true" type="q95:WorkPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkPlaceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateWorkPlaceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkPlace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkPlaceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetWorkPlaceResult" nillable="true" type="q96:WorkPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkPlace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkPlaceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkPlaces">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListWorkPlacesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListWorkPlacesResult" nillable="true" type="q97:ArrayOfWorkPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkPlaces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWorkPlacesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchWorkPlacesResult" nillable="true" type="q98:ArrayOfWorkPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkPlace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workplace" nillable="true" type="q99:WorkPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkPlaceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="workTime" nillable="true" type="q100:WorkTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateWorkTimeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetWorkTimeResult" nillable="true" type="q101:WorkTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkTimeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePrediction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usertaskid" type="xs:int" />
+        <xs:element minOccurs="0" name="workforceid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePredictionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePropertyTypeToComponentCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="propertyType" nillable="true" type="q102:PropertyType" />
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="componentcategory" nillable="true" type="q103:ComponentCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePropertyTypeToComponentCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePropertyTypeToComponentCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePropertyTypeToMaterialCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="propertyType" nillable="true" type="q104:PropertyType" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="materialCategory" nillable="true" type="q105:MaterialCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePropertyTypeToMaterialCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePropertyTypeToMaterialCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="GetPropertyTypeResult" nillable="true" type="q106:PropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePropertyType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="PropertyType" nillable="true" type="q107:PropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePropertyTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePropertyType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePropertyTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPropertyTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPropertyTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="ListPropertyTypesResult" nillable="true" type="q108:ArrayOfPropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPropertyTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPropertyTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="SearchPropertyTypesResult" nillable="true" type="q109:ArrayOfPropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPropertyTypesFromComponentCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="componentCategory" nillable="true" type="q110:ComponentCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPropertyTypesFromComponentCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="ListPropertyTypesFromComponentCategoryResult" nillable="true" type="q111:ArrayOfPropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPropertyTypesFromMaterialCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="materialCategory" nillable="true" type="q112:MaterialCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPropertyTypesFromMaterialCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="ListPropertyTypesFromMaterialCategoryResult" nillable="true" type="q113:ArrayOfPropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePropertyValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="propertyValue" nillable="true" type="q114:PropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePropertyValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePropertyValueResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="GetPropertyValueResult" nillable="true" type="q115:PropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePropertyValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="PropertyValue" nillable="true" type="q116:PropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePropertyValueResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePropertyValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePropertyValueResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPropertyValues">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPropertyValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="ListPropertyValuesResult" nillable="true" type="q117:ArrayOfPropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProviderCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="providerCompany" nillable="true" type="q118:ProviderCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProviderCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateProviderCompanyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="GetProviderCompanyResult" nillable="true" type="q119:ProviderCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProviderCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="providerCompany" nillable="true" type="q120:ProviderCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProviderCompanyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProviderCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProviderCompanyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListProviderCompanies">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListProviderCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="ListProviderCompaniesResult" nillable="true" type="q121:ArrayOfProviderCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProviderCompanies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchProviderCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="SearchProviderCompaniesResult" nillable="true" type="q122:ArrayOfProviderCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCompanyContactToProviderCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="providerCompany" nillable="true" type="q123:ProviderCompany" />
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="companyContact" nillable="true" type="q124:CompanyContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCompanyContactToProviderCompanyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyContactFromProviderCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="providerCompany" nillable="true" type="q125:ProviderCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyContactFromProviderCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="GetCompanyContactFromProviderCompanyResult" nillable="true" type="q126:ArrayOfCompanyContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCompanyContactFromProviderCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="providerCompany" nillable="true" type="q127:ProviderCompany" />
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="companyContact" nillable="true" type="q128:CompanyContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCompanyContactFromProviderCompanyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListReservationfromProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="processId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListReservationfromProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="ListReservationfromProcessResult" nillable="true" type="q129:ArrayOfReservation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="role" nillable="true" type="q130:Role" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateRoleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetRoleResult" nillable="true" type="q131:Role" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="role" nillable="true" type="q132:Role" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRoleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListRoles">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListRolesResult" nillable="true" type="q133:ArrayOfRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchRolesResult" nillable="true" type="q134:ArrayOfRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermissionToRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="role" nillable="true" type="q135:Role" />
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="permission" nillable="true" type="q136:Permission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermissionToRoleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePermissionFromRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="role" nillable="true" type="q137:Role" />
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="permission" nillable="true" type="q138:Permission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePermissionFromRoleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionsFromRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="role" nillable="true" type="q139:Role" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionsFromRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetPermissionsFromRoleResult" nillable="true" type="q140:ArrayOfPermission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionsFromListOfRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="roleIds" nillable="true" type="q141:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionsFromListOfRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetPermissionsFromListOfRolesResult" nillable="true" type="q142:ArrayOfPermission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolesFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q143:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolesFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetRolesFromWorkforceResult" nillable="true" type="q144:ArrayOfRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRoleToWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="role" nillable="true" type="q145:Role" />
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q146:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRoleToWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorkforceRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorkforceRolesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="schedule" nillable="true" type="q147:Schedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateScheduleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetScheduleResult" nillable="true" type="q148:Schedule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteScheduleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleDuration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleDurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="GetScheduleDurationResult" type="q149:duration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntersectSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q150:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntersectSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetIntersectSchedulesResult" nillable="true" type="q151:ArrayOfDateInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnionSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q152:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnionSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetUnionSchedulesResult" nillable="true" type="q153:ArrayOfDateInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplementerSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q154:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplementerSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetComplementerSchedulesResult" nillable="true" type="q155:ArrayOfDateInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddScheduleToWorkforces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="schedule" nillable="true" type="q156:Schedule" />
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q157:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddScheduleToWorkforcesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewUnionSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q158:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewUnionSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetNewUnionSchedulesResult" nillable="true" type="q159:ArrayOfDateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="service" nillable="true" type="q160:Service" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateServiceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="GetServiceResult" nillable="true" type="q161:Service" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="service" nillable="true" type="q162:Service" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListServices">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListServicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="ListServicesResult" nillable="true" type="q163:ArrayOfService" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchServices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchServicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="SearchServicesResult" nillable="true" type="q164:ArrayOfService" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServicesFromProviderCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServicesFromProviderCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="GetServicesFromProviderCompanyResult" nillable="true" type="q165:ArrayOfService" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateServiceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="serviceType" nillable="true" type="q166:ServiceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateServiceTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateServiceTypeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="GetServiceTypeResult" nillable="true" type="q167:ServiceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateServiceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="serviceType" nillable="true" type="q168:ServiceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateServiceTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteServiceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteServiceTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListServiceTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListServiceTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="ListServiceTypesResult" nillable="true" type="q169:ArrayOfServiceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchServiceTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchServiceTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="SearchServiceTypesResult" nillable="true" type="q170:ArrayOfServiceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateShiftTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="shiftTemplate" nillable="true" type="q171:ShiftTemplate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateShiftTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateShiftTemplateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShiftTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShiftTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetShiftTemplateResult" nillable="true" type="q172:ShiftTemplate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShiftTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="shiftTemplate" nillable="true" type="q173:ShiftTemplate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateShiftTemplateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteShiftTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteShiftTemplateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListEquipmentGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListEquipmentGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListEquipmentGroupsResult" nillable="true" type="q174:ArrayOfEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEquipmentGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEquipmentGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchEquipmentGroupsResult" nillable="true" type="q175:ArrayOfEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetDynamicEquipmentGroupResult" nillable="true" type="q176:DynamicEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentGroupType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentGroupTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEquipmentGroupTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDynamicEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipmentGroup" nillable="true" type="q177:DynamicEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDynamicEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEquipmentGroupToGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="childEquipmentGroup" nillable="true" type="q178:EquipmentGroup" />
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="parentEquipmentGroup" nillable="true" type="q179:EquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEquipmentGroupToGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainedEquipmentGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainedEquipmentGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetContainedEquipmentGroupsResult" nillable="true" type="q180:ArrayOfEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainersEquipmentGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContainersEquipmentGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetContainersEquipmentGroupsResult" nillable="true" type="q181:ArrayOfEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEquipmentGroupFromGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="toRemoveEquipmentGroup" nillable="true" type="q182:EquipmentGroup" />
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="parentEquipmentGroup" nillable="true" type="q183:EquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEquipmentGroupFromGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEquipmentToPredefinedEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q184:Equipment" />
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipmentGroup" nillable="true" type="q185:PredefinedEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEquipmentToPredefinedEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEquipmentFromPredefinedEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q186:Equipment" />
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipmentGroup" nillable="true" type="q187:PredefinedEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEquipmentFromPredefinedEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPredefinedEquipmentGroupContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPredefinedEquipmentGroupContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetPredefinedEquipmentGroupContentResult" nillable="true" type="q188:ArrayOfEquipment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwritePredefinedEquipmentGroupEquipments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="equipmentGroupId" type="xs:int" />
+        <xs:element xmlns:q189="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="equipmentIds" nillable="true" type="q189:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwritePredefinedEquipmentGroupEquipmentsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateHierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="hierarchy" nillable="true" type="q190:Hierarchy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateHierarchyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateHierarchyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetHierarchyResult" nillable="true" type="q191:Hierarchy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="hierarchy" nillable="true" type="q192:Hierarchy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHierarchyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteHierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteHierarchyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchHierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchHierarchyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchHierarchyResult" nillable="true" type="q193:ArrayOfHierarchy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListHierarchies">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListHierarchiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListHierarchiesResult" nillable="true" type="q194:ArrayOfHierarchy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddHierarchyToWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="hierarchy" nillable="true" type="q195:Hierarchy" />
+        <xs:element xmlns:q196="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q196:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddHierarchyToWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchiesFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q197:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchiesFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q198="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetHierarchiesFromWorkforceResult" nillable="true" type="q198:ArrayOfHierarchy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorkforceHierarchies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveWorkforceHierarchiesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforcesFromHierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q199="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="hierarchy" nillable="true" type="q199:Hierarchy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforcesFromHierarchyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetWorkforcesFromHierarchyResult" nillable="true" type="q200:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateHierarchyTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="hierarchyTree" nillable="true" type="q201:HierarchyTree" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateHierarchyTreeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateHierarchyTreeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyTreeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetHierarchyTreeResult" nillable="true" type="q202:HierarchyTree" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHierarchyTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="hierarchyTree" nillable="true" type="q203:HierarchyTree" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHierarchyTreeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteHierarchyTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteHierarchyTreeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchHierarchyTrees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchHierarchyTreesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchHierarchyTreesResult" nillable="true" type="q204:ArrayOfHierarchyTree" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListHierarchyTrees">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListHierarchyTreesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q205="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListHierarchyTreesResult" nillable="true" type="q205:ArrayOfHierarchyTree" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q206="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="material" nillable="true" type="q206:Material" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMaterialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateMaterialResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="GetMaterialResult" nillable="true" type="q207:Material" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q208="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="Material" nillable="true" type="q208:Material" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterialResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterialResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListMaterials">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListMaterialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="ListMaterialsResult" nillable="true" type="q209:ArrayOfMaterial" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMaterials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMaterialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q210="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="SearchMaterialsResult" nillable="true" type="q210:ArrayOfMaterial" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPropertiesToMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="material" nillable="true" type="q211:Material" />
+        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="propertyvalue" nillable="true" type="q212:PropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPropertiesToMaterialResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyValueFromMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q213="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="material" nillable="true" type="q213:Material" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyValueFromMaterialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q214="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="GetPropertyValueFromMaterialResult" nillable="true" type="q214:ArrayOfPropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePropertyFromMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q215="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="material" nillable="true" type="q215:Material" />
+        <xs:element xmlns:q216="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="propertyvalue" nillable="true" type="q216:PropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePropertyFromMaterialResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMaterialCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q217="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="materialCategory" nillable="true" type="q217:MaterialCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMaterialCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateMaterialCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q218="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="GetMaterialCategoryResult" nillable="true" type="q218:MaterialCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterialCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q219="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="MaterialCategory" nillable="true" type="q219:MaterialCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterialCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterialCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterialCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListMaterialCategories">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListMaterialCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q220="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="ListMaterialCategoriesResult" nillable="true" type="q220:ArrayOfMaterialCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMaterialCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMaterialCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q221="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="SearchMaterialCategoriesResult" nillable="true" type="q221:ArrayOfMaterialCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPossiblePropetyToMaterialCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q222="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="materialCategory" nillable="true" type="q222:MaterialCategory" />
+        <xs:element xmlns:q223="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="popertyType" nillable="true" type="q223:PropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPossiblePropetyToMaterialCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPossiblePropetyFromMaterialCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q224="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="materialCategory" nillable="true" type="q224:MaterialCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPossiblePropetyFromMaterialCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q225="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="GetPossiblePropetyFromMaterialCategoryResult" nillable="true" type="q225:ArrayOfPropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePossiblePropetyFromMaterialCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q226="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Materials" minOccurs="0" name="materialCategory" nillable="true" type="q226:MaterialCategory" />
+        <xs:element xmlns:q227="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="propertyType" nillable="true" type="q227:PropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePossiblePropetyFromMaterialCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q228="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="permission" nillable="true" type="q228:Permission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePermissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePermissionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q229="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetPermissionResult" nillable="true" type="q229:Permission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q230="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="permission" nillable="true" type="q230:Permission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePermissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePermissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPermissions">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q231="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListPermissionsResult" nillable="true" type="q231:ArrayOfPermission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q232="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchPermissionsResult" nillable="true" type="q232:ArrayOfPermission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePrediction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q233="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="prediction" nillable="true" type="q233:Prediction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePredictionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePredictionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePredictions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q234="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="predictions" nillable="true" type="q234:ArrayOfPrediction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePredictionsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPredictionsFromUserTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q235="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="usertask" nillable="true" type="q235:UserTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPredictionsFromUserTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q236="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetPredictionsFromUserTaskResult" nillable="true" type="q236:ArrayOfPrediction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPredictionsWorkForce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q237="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="wf" nillable="true" type="q237:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPredictionsWorkForceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q238="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetPredictionsWorkForceResult" nillable="true" type="q238:ArrayOfPrediction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePredictions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q239="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="usertask" nillable="true" type="q239:UserTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePredictionsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListProcesses">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListProcessesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q240="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="ListProcessesResult" nillable="true" type="q240:ArrayOfProcess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="processId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q241="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetProcessResult" nillable="true" type="q241:Process" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListUserTasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="processid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListUserTasksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q242="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="ListUserTasksResult" nillable="true" type="q242:ArrayOfUserTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Createusertask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q243="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="prediction" nillable="true" type="q243:UserTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateusertaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateusertaskResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsertask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsertaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q244="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetUsertaskResult" nillable="true" type="q244:UserTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAbsence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q245="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="absence" nillable="true" type="q245:Absence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAbsenceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateAbsenceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsenceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q246="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetAbsenceResult" nillable="true" type="q246:Absence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAbsence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAbsenceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsenceDuration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsenceDurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q247="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="GetAbsenceDurationResult" type="q247:duration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkTimeAbsence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q248="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="worktime" nillable="true" type="q248:WorkTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CountWorkTimeAbsenceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q249="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="CountWorkTimeAbsenceResult" type="q249:duration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntersectAbsences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q250="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q250:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntersectAbsencesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q251="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetIntersectAbsencesResult" nillable="true" type="q251:ArrayOfDateInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnionAbsences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q252="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q252:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnionAbsencesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q253="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetUnionAbsencesResult" nillable="true" type="q253:ArrayOfDateInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewUnionAbsences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q254="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q254:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewUnionAbsencesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q255="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetNewUnionAbsencesResult" nillable="true" type="q255:ArrayOfDateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplementerAbsences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q256="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q256:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComplementerAbsencesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q257="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetComplementerAbsencesResult" nillable="true" type="q257:ArrayOfDateInterval" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAbsenceToWorkforces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q258="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="absence" nillable="true" type="q258:Absence" />
+        <xs:element xmlns:q259="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforces" nillable="true" type="q259:ArrayOfWorkforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAbsenceToWorkforcesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsencesFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q260="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q260:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsencesFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q261="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetAbsencesFromWorkforceResult" nillable="true" type="q261:ArrayOfAbsence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJustifiedAbsencesFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q262="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q262:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJustifiedAbsencesFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q263="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetJustifiedAbsencesFromWorkforceResult" nillable="true" type="q263:ArrayOfAbsence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnJustifiedAbsencesFromWorkforce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q264="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q264:Workforce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnJustifiedAbsencesFromWorkforceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q265="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetUnJustifiedAbsencesFromWorkforceResult" nillable="true" type="q265:ArrayOfAbsence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsencesFromWorkforceInterval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q266="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q266:Workforce" />
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsencesFromWorkforceIntervalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q267="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetAbsencesFromWorkforceIntervalResult" nillable="true" type="q267:ArrayOfAbsence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJustifiedAbsencesFromWorkforceInterval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q268="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q268:Workforce" />
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJustifiedAbsencesFromWorkforceIntervalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q269="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetJustifiedAbsencesFromWorkforceIntervalResult" nillable="true" type="q269:ArrayOfAbsence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnJustifiedAbsencesFromWorkforceInterval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q270="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="workforce" nillable="true" type="q270:Workforce" />
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnJustifiedAbsencesFromWorkforceIntervalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q271="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetUnJustifiedAbsencesFromWorkforceIntervalResult" nillable="true" type="q271:ArrayOfAbsence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAbsenceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q272="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="absencetype" nillable="true" type="q272:AbsenceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAbsenceTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateAbsenceTypeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsenceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAbsenceTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q273="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="GetAbsenceTypeResult" nillable="true" type="q273:AbsenceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAbsenceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAbsenceTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListAbsenceTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListAbsenceTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q274="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="ListAbsenceTypesResult" nillable="true" type="q274:ArrayOfAbsenceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAbsenceTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAbsenceTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q275="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="SearchAbsenceTypesResult" nillable="true" type="q275:ArrayOfAbsenceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAbsenceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q276="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.TimeManagement" minOccurs="0" name="absencetype" nillable="true" type="q276:AbsenceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAbsenceTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCompanyContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q277="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="companyContact" nillable="true" type="q277:CompanyContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCompanyContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateCompanyContactResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q278="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="GetCompanyContactResult" nillable="true" type="q278:CompanyContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCompanyContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q279="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="companyContact" nillable="true" type="q279:CompanyContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCompanyContactResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompanyContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompanyContactResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListCompanyContacts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListCompanyContactsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q280="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="ListCompanyContactsResult" nillable="true" type="q280:ArrayOfCompanyContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCompanyContacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCompanyContactsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q281="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" minOccurs="0" name="SearchCompanyContactsResult" nillable="true" type="q281:ArrayOfCompanyContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateComponent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q282="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="component" nillable="true" type="q282:Component" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateComponentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateComponentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComponent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComponentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q283="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="GetComponentResult" nillable="true" type="q283:Component" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateComponent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q284="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="Component" nillable="true" type="q284:Component" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateComponentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteComponent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteComponentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListComponents">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListComponentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q285="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="ListComponentsResult" nillable="true" type="q285:ArrayOfComponent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchComponents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchComponentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q286="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="SearchComponentsResult" nillable="true" type="q286:ArrayOfComponent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPropertiesToComponent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q287="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="component" nillable="true" type="q287:Component" />
+        <xs:element xmlns:q288="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="propertyvalue" nillable="true" type="q288:PropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPropertiesToComponentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyValueFromComponent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q289="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="component" nillable="true" type="q289:Component" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyValueFromComponentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q290="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="GetPropertyValueFromComponentResult" nillable="true" type="q290:ArrayOfPropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePropertyFromComponent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q291="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="component" nillable="true" type="q291:Component" />
+        <xs:element xmlns:q292="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes.PropertyValues" minOccurs="0" name="propertyvalue" nillable="true" type="q292:PropertyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePropertyFromComponentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateComponentCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q293="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="componentCategory" nillable="true" type="q293:ComponentCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateComponentCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateComponentCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComponentCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComponentCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q294="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="GetComponentCategoryResult" nillable="true" type="q294:ComponentCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateComponentCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q295="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="ComponentCategory" nillable="true" type="q295:ComponentCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateComponentCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteComponentCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteComponentCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListComponentCategories">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListComponentCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q296="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="ListComponentCategoriesResult" nillable="true" type="q296:ArrayOfComponentCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchComponentCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchComponentCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q297="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="SearchComponentCategoriesResult" nillable="true" type="q297:ArrayOfComponentCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPossiblePropetyToComponentCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q298="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="componentCategory" nillable="true" type="q298:ComponentCategory" />
+        <xs:element xmlns:q299="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="popertyType" nillable="true" type="q299:PropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPossiblePropetyToComponentCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPossiblePropetyFromComponentCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q300="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="componentCategory" nillable="true" type="q300:ComponentCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPossiblePropetyFromComponentCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q301="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="GetPossiblePropetyFromComponentCategoryResult" nillable="true" type="q301:ArrayOfPropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePossiblePropetyFromComponentCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q302="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Components" minOccurs="0" name="componentCategory" nillable="true" type="q302:ComponentCategory" />
+        <xs:element xmlns:q303="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" minOccurs="0" name="propertyType" nillable="true" type="q303:PropertyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePossiblePropetyFromComponentCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q304="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q304:Equipment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateEquipmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q305="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetEquipmentResult" nillable="true" type="q305:Equipment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q306="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q306:Equipment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListEquipments">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListEquipmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q307="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="ListEquipmentsResult" nillable="true" type="q307:ArrayOfEquipment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchTerm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q308="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="SearchEquipmentResult" nillable="true" type="q308:ArrayOfEquipment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSkillToEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q309="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q309:Equipment" />
+        <xs:element xmlns:q310="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skill" nillable="true" type="q310:Skill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSkillToEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSkillFromEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q311="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q311:Equipment" />
+        <xs:element xmlns:q312="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="skill" nillable="true" type="q312:Skill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSkillFromEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkillsOfEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q313="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q313:Equipment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkillsOfEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q314="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetSkillsOfEquipmentResult" nillable="true" type="q314:ArrayOfSkill" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwriteEquipmentSkills">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="equipmentId" type="xs:int" />
+        <xs:element xmlns:q315="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="skillIds" nillable="true" type="q315:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwriteEquipmentSkillsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermissionToEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q316="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q316:Equipment" />
+        <xs:element xmlns:q317="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="permission" nillable="true" type="q317:Permission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermissionToEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionFromEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q318="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q318:Equipment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionFromEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q319="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetPermissionFromEquipmentResult" nillable="true" type="q319:ArrayOfPermission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePermissionFromEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q320="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipment" nillable="true" type="q320:Equipment" />
+        <xs:element xmlns:q321="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="permission" nillable="true" type="q321:Permission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePermissionFromEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwriteEquipmentPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="equipmentId" type="xs:int" />
+        <xs:element xmlns:q322="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="permissionIds" nillable="true" type="q322:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OverwriteEquipmentPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePredefinedEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q323="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipmentGroup" nillable="true" type="q323:PredefinedEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePredefinedEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreatePredefinedEquipmentGroupResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDynamicEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q324="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipmentGroup" nillable="true" type="q324:DynamicEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDynamicEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateDynamicEquipmentGroupResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q325="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetEquipmentGroupResult" nillable="true" type="q325:EquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q326="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="equipmentGroup" nillable="true" type="q326:EquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

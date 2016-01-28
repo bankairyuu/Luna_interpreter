@@ -18,7 +18,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 case Enums.eNonTerminals.Expression:
                     object returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
                     Console.WriteLine("################################################################");
-                    Console.WriteLine("# Programline value: " + returnValue + " type: " + returnValue.GetType());
+                    Console.WriteLine("# Programline value: " + returnValue + "\ttype: " + returnValue.GetType());
                     Console.WriteLine("################################################################" + Environment.NewLine);
                     return returnValue;
 
