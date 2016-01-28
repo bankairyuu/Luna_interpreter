@@ -35,6 +35,10 @@ namespace Luna_interpreter.Model.Structure.Classes
             {
                 // zárójel és benne egy expression van
                 // az expressiont kiértékelem és azzal majd valamit kezdek
+
+
+
+
             }
             else if (node.Count() == 2)
             {
