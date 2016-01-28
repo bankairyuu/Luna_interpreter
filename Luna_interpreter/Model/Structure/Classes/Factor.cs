@@ -139,6 +139,26 @@ namespace Luna_interpreter.Model.Structure.Classes
                         Console.WriteLine("Factor value: " + returnValue + " type: " + returnValue.GetType());
                         return node[0].Data.ToString();
                     }
+                    else if (node[0].Parent.ToString().Equals("BooleanLiteral"))
+                    {
+                        if (node[0].Data.ToString().Equals("true") || node[0].Data.ToString().Equals("yes"))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (node[0].Parent.ToString().Equals("<Chain>"))
+                    {
+                        string type = Regex.Replace(node[0].Parent.ToString(), "[^0-9a-zA-Z]+", "");
+                        Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
+
+                        returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
+                        Console.WriteLine("Factor value: " + returnValue + " type: " + returnValue.GetType());
+                        return returnValue;
+                    }
                     else
                     {
                         throw new Exception("Literal define error - Luna_interpreter.Model.Structure.Classes.Factor.Execute");

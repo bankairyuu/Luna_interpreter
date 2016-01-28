@@ -378,14 +378,65 @@ namespace Luna_interpreter.Model.Structure.Classes
                             }
                     }
                 }
+                else if (operand1 is bool)
+                {
+                    switch (operatorString)
+                    {
+                        case "=":
+                            operand1 = operand2;
+                            return operand1;
+                        case "==":
+                            if (operand1 == operand2)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        case "equals":
+                            if (operand1 == operand2)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        case "<>":
+                            if (operand1 != operand2)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        case "!=":
+                            if (operand1 != operand2)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        case "not =":
+                            if (operand1 != operand2)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                    }
+                }
             }
             else
             {
                 throw new NotImplementedException();
             }
-
-
-
             
             return operand1;
         }
