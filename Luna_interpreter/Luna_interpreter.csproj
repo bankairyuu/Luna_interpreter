@@ -51,7 +51,6 @@
     <Compile Include="GOLD_Engine\Parser.cs" />
     <Compile Include="Logical_Engine\Classes\Processor.cs" />
     <Compile Include="Model\Enums.cs" />
-    <Compile Include="Model\Services\Services.cs" />
     <Compile Include="Model\Structure\Classes\Chain.cs" />
     <Compile Include="Model\Structure\Classes\DateTimeLiteral.cs" />
     <Compile Include="Model\Structure\Classes\Element.cs" />
@@ -255,6 +254,7 @@
   <ItemGroup>
     <Folder Include="Logical_Engine\Interfaces\" />
     <Folder Include="Model\Container\" />
+    <Folder Include="Model\Services\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
