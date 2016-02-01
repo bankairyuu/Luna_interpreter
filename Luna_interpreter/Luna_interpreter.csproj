@@ -54,7 +54,6 @@
     <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\Structure\Classes\Chain.cs" />
     <Compile Include="Model\Structure\Classes\DateTimeLiteral.cs" />
-    <Compile Include="Model\Structure\Classes\Statement.cs" />
     <Compile Include="ServiceHandler\Document.cs" />
     <Compile Include="Model\Structure\Classes\Element.cs" />
     <Compile Include="Model\Structure\Classes\Expression.cs" />
