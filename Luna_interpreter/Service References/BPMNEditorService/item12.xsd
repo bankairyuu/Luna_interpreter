@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.NonFunctional" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.NonFunctional" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/BPMNEditorService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects" />
+  <xs:complexType name="ArrayOfPool">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pool" nillable="true" type="tns:Pool" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPool" nillable="true" type="tns:ArrayOfPool" />
+  <xs:complexType name="Pool">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Lanes" nillable="true" type="tns:ArrayOfLane" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pool" nillable="true" type="tns:Pool" />
+  <xs:complexType name="ArrayOfLane">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Lane" nillable="true" type="tns:Lane" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLane" nillable="true" type="tns:ArrayOfLane" />
+  <xs:complexType name="Lane">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects" minOccurs="0" name="Layout" nillable="true" type="q1:Layout" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoolId" type="xs:int" />
+      <xs:element minOccurs="0" name="Uid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Lane" nillable="true" type="tns:Lane" />
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events.StartEvents" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events.StartEvents" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/BPMNEditorService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" />
+  <xs:complexType name="MessageStartEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" base="q1:Event">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MessageStartEvent" nillable="true" type="tns:MessageStartEvent" />
+  <xs:complexType name="SignalStartEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" base="q2:Event">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Signal" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SignalStartEvent" nillable="true" type="tns:SignalStartEvent" />
+  <xs:complexType name="NormalStartEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" base="q3:Event">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NormalStartEvent" nillable="true" type="tns:NormalStartEvent" />
+</xs:schema>

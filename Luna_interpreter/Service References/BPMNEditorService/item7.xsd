@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events.IntermediateEvents" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events.IntermediateEvents" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/BPMNEditorService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" />
+  <xs:complexType name="MessageCatchEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" base="q1:Event">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MessageCatchEvent" nillable="true" type="tns:MessageCatchEvent" />
+  <xs:complexType name="MessageThrowEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" base="q2:Event">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MessageThrowEvent" nillable="true" type="tns:MessageThrowEvent" />
+  <xs:complexType name="SignalCatchEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" base="q3:Event">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Signal" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SignalCatchEvent" nillable="true" type="tns:SignalCatchEvent" />
+  <xs:complexType name="SignalThrowEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" base="q4:Event">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Signal" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SignalThrowEvent" nillable="true" type="tns:SignalThrowEvent" />
+  <xs:complexType name="LinkCatchEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" base="q5:Event">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LinkCatchEvent" nillable="true" type="tns:LinkCatchEvent" />
+  <xs:complexType name="LinkThrowEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects.Events" base="q6:Event">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LinkThrowEvent" nillable="true" type="tns:LinkThrowEvent" />
+</xs:schema>

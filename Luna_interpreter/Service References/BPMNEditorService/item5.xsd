@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://wfe.mik.uni-pannon.hu/" elementFormDefault="qualified" targetNamespace="http://wfe.mik.uni-pannon.hu/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/BPMNEditorService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/BPMNEditorService/?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Document" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/BPMNEditorService/?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/FlowService.Authentication" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/BPMNEditorService/?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Resources" />
+  <xs:element name="GetProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects" minOccurs="0" name="GetProcessResult" nillable="true" type="q1:Process" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects" minOccurs="0" name="process" nillable="true" type="q2:Process" />
+        <xs:element minOccurs="0" name="isValid" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProcessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveProcessResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProcess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProcessResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcesses">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcessesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects" minOccurs="0" name="GetProcessesResult" nillable="true" type="q3:ArrayOfProcess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocuments">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Document" minOccurs="0" name="GetDocumentsResult" nillable="true" type="q4:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentSections">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentSectionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Document" minOccurs="0" name="GetDocumentSectionsResult" nillable="true" type="q5:ArrayOfSection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSectionById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSectionByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Document" minOccurs="0" name="GetSectionByIdResult" nillable="true" type="q6:Section" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCredentials">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FlowService.Authentication" minOccurs="0" name="GetCredentialsResult" nillable="true" type="q7:LoginData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Resources" minOccurs="0" name="GetWorkforceGroupsResult" nillable="true" type="q8:ArrayOfWorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Resources" minOccurs="0" name="GetEquipmentGroupsResult" nillable="true" type="q9:ArrayOfEquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Resources" minOccurs="0" name="GetWorkforceGroupResult" nillable="true" type="q10:WorkforceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Resources" minOccurs="0" name="GetEquipmentGroupResult" nillable="true" type="q11:EquipmentGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

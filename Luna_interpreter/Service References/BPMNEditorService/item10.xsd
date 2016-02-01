@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/BPMNEditorService/?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Flows" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/BPMNEditorService/?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.NonFunctional" />
+  <xs:complexType name="Process">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BpmnObjects" nillable="true" type="tns:ArrayOfBPMNObject" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.Flows" minOccurs="0" name="Flows" nillable="true" type="q1:ArrayOfFlowObject" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.BPMN.NonFunctional" minOccurs="0" name="Pools" nillable="true" type="q2:ArrayOfPool" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Process" nillable="true" type="tns:Process" />
+  <xs:complexType name="ArrayOfBPMNObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BPMNObject" nillable="true" type="tns:BPMNObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBPMNObject" nillable="true" type="tns:ArrayOfBPMNObject" />
+  <xs:complexType name="BPMNObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LaneId" type="xs:int" />
+      <xs:element minOccurs="0" name="LaneUid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Layout" nillable="true" type="tns:Layout" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessId" type="xs:int" />
+      <xs:element minOccurs="0" name="Uid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BPMNObject" nillable="true" type="tns:BPMNObject" />
+  <xs:complexType name="Layout">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Height" type="xs:double" />
+      <xs:element minOccurs="0" name="Width" type="xs:double" />
+      <xs:element minOccurs="0" name="X" type="xs:double" />
+      <xs:element minOccurs="0" name="Y" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Layout" nillable="true" type="tns:Layout" />
+  <xs:complexType name="ArrayOfProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Process" nillable="true" type="tns:Process" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcess" nillable="true" type="tns:ArrayOfProcess" />
+</xs:schema>

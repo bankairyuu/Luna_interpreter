@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Resources" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.BPMNEditor.DataContracts.Resources" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfWorkforceGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkforceGroup" nillable="true" type="tns:WorkforceGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkforceGroup" nillable="true" type="tns:ArrayOfWorkforceGroup" />
+  <xs:complexType name="WorkforceGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkforceGroup" nillable="true" type="tns:WorkforceGroup" />
+  <xs:complexType name="ArrayOfEquipmentGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EquipmentGroup" nillable="true" type="tns:EquipmentGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEquipmentGroup" nillable="true" type="tns:ArrayOfEquipmentGroup" />
+  <xs:complexType name="EquipmentGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentGroup" nillable="true" type="tns:EquipmentGroup" />
+</xs:schema>

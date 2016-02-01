@@ -28,14 +28,16 @@ namespace Luna_interpreter.ServiceHandler
             try
             {
                 var client = new DocumentEditorService.DocumentEditorServiceClient();
+                var bpmnclient = new BPMNEditorService.BPMNEditorClient();
 
                 client.ClientCredentials.UserName.UserName = "test";
                 client.ClientCredentials.UserName.Password = "test";
 
 
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
-                
 
+                //var processes = bpmnclient.GetProcess(1);
+                
 
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
             }

@@ -54,6 +54,11 @@
     <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\Structure\Classes\Chain.cs" />
     <Compile Include="Model\Structure\Classes\DateTimeLiteral.cs" />
+    <Compile Include="Service References\BPMNEditorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ServiceHandler\Document.cs" />
     <Compile Include="Model\Structure\Classes\Element.cs" />
     <Compile Include="Model\Structure\Classes\Expression.cs" />
@@ -87,6 +92,82 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="GOLD_Engine\lang0.51.egt" />
+    <None Include="Service References\BPMNEditorService\BPMNEditor.wsdl" />
+    <None Include="Service References\BPMNEditorService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\item9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BPMNEditorService\Luna_interpreter.BPMNEditorService.Document.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BPMNEditorService\Luna_interpreter.BPMNEditorService.EquipmentGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BPMNEditorService\Luna_interpreter.BPMNEditorService.LoginData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BPMNEditorService\Luna_interpreter.BPMNEditorService.Process.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BPMNEditorService\Luna_interpreter.BPMNEditorService.Section.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BPMNEditorService\Luna_interpreter.BPMNEditorService.WorkforceGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\DocumentEditorService\DocumentEditorService.wsdl" />
     <None Include="Service References\DocumentEditorService\item.xsd">
       <SubType>Designer</SubType>
@@ -294,6 +375,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BPMNEditorService\" />
     <WCFMetadataStorage Include="Service References\DocumentEditorService\" />
     <WCFMetadataStorage Include="Service References\LocationService\" />
     <WCFMetadataStorage Include="Service References\ManagerService\" />
@@ -339,6 +421,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\DocumentEditorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BPMNEditorService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BPMNEditorService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BPMNEditorService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BPMNEditorService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
