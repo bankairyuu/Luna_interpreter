@@ -12,11 +12,11 @@ namespace Luna_interpreter
                 Console.WriteLine(Environment.NewLine + "\t---------\tParse Tree\t---------"+ Environment.NewLine);
                 //Console.WriteLine(parser.Parsing("((-5 + -15) * 5) <= -20 * (2 + 3)"));
                 //Console.WriteLine(parser.Parsing("yes == no"));
-                Console.WriteLine(parser.Parsing("x != D.C.v"));
+                //Console.WriteLine(parser.Parsing("x != D.C.v"));
                 //Console.WriteLine(parser.Parsing("x != D.C.v()"));
                 //Console.WriteLine(parser.Parsing("x != D.C.v(a)"));
                 //Console.WriteLine(parser.Parsing("x != D.C.v(a, b)"));
-                //Console.WriteLine(parser.Parsing("(((-5 + -15) * 5) <= -20 * (2 + 3)) == yes"));
+                Console.WriteLine(parser.Parsing("(((-5 + -15) * 5) <= -20 * (2 + 3)) == yes"));
                 //Console.WriteLine(parser.Parsing("2016.01.28"));
                 Console.WriteLine(Environment.NewLine + "\t---------\tParse Tree\t---------" + Environment.NewLine);
             }
