@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts.Fields" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts.Fields" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/DocumentEditorService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/DocumentEditorService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CheckBoxField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q1:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Caption" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultValue" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CheckBoxField" nillable="true" type="tns:CheckBoxField" />
+  <xs:complexType name="ComputedField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q2:Field">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComputedField" nillable="true" type="tns:ComputedField" />
+  <xs:complexType name="DateField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q3:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Format" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MaxValue" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MinValue" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DateField" nillable="true" type="tns:DateField" />
+  <xs:complexType name="ImageField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q4:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImageField" nillable="true" type="tns:ImageField" />
+  <xs:complexType name="IntegerField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q5:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MaxValue" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MinValue" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IntegerField" nillable="true" type="tns:IntegerField" />
+  <xs:complexType name="LabelField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q6:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LabelField" nillable="true" type="tns:LabelField" />
+  <xs:complexType name="PictureField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q7:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PictureField" nillable="true" type="tns:PictureField" />
+  <xs:complexType name="RadioButtonField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q8:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Caption" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultValue" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RadioButtonField" nillable="true" type="tns:RadioButtonField" />
+  <xs:complexType name="RealField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q9:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MaxValue" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="MinValue" nillable="true" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RealField" nillable="true" type="tns:RealField" />
+  <xs:complexType name="ResourceField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q10:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultValueId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResourceField" nillable="true" type="tns:ResourceField" />
+  <xs:complexType name="SelectField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q11:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultValueId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DependsOnId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DependsOnUid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnumerationId" type="xs:int" />
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SelectField" nillable="true" type="tns:SelectField" />
+  <xs:complexType name="TextField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q12:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MaxSize" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MinSize" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Validation" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TextField" nillable="true" type="tns:TextField" />
+  <xs:complexType name="TimeField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/FlowService.DocumentEditor.DataContracts" base="q13:Field">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="ser:duration" />
+          <xs:element minOccurs="0" name="Format" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MaxValue" nillable="true" type="ser:duration" />
+          <xs:element minOccurs="0" name="MinValue" nillable="true" type="ser:duration" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TimeField" nillable="true" type="tns:TimeField" />
+  <xs:complexType name="Enumeration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfEnumerationItem" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Enumeration" nillable="true" type="tns:Enumeration" />
+  <xs:complexType name="ArrayOfEnumerationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnumerationItem" nillable="true" type="tns:EnumerationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnumerationItem" nillable="true" type="tns:ArrayOfEnumerationItem" />
+  <xs:complexType name="EnumerationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DependsOnId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EnumerationId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnumerationItem" nillable="true" type="tns:EnumerationItem" />
+  <xs:complexType name="ArrayOfEnumeration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Enumeration" nillable="true" type="tns:Enumeration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnumeration" nillable="true" type="tns:ArrayOfEnumeration" />
+</xs:schema>

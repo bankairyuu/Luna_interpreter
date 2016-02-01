@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GOLD;
 using System.Text.RegularExpressions;
 
@@ -33,14 +29,24 @@ namespace Luna_interpreter.Model.Structure.Classes
 
                             if (_operand1 == null)
                             {
-//                                _operand1 = Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data);
-                                // _operand1-re megnézni, hogy ilyen objektum van-e, majd ha van, akkor továbbmenni a második operandusban megadott fieldre
-                                // ez a bejárás már nem úgy fog kinézni, mint eddig, csak hasonlítani fog rá!!!!
-                                // _operand2 létezését a kapott objektumban vizsgálni, majd az egyel alacsonyabb szintre úgy továbbugrani, hogy viszem magammal azt az adott
-                                // operand2-es értéket, egyel lejjebb operand 1-ként
+                                /*
+                                 * Elsőként meg kell nézni, hogy a keresett objektum Document, vagy Resource
+                                 * A második lépés, hogy az ennek megfelelő objektumot az arra létrehozott service-től lekérjük
+                                 * Az objektum lekérése után a lebontás kicsit másképp néz ki majd az eddigiekhez képes, ugyanis
+                                 * objektumon belüli elérési vizsgálatokkal folytatódik
+                                 */
+
+                                // Element lekérés, majd ID -> megkapom a hivatkozandó neveket, ezeket pedig feldolgozom
+                                _operand1 = Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data);
                             }
                             else
                             {
+                                /*
+                                 * Amennyiben az objektum lekérése sikeresen megtörtént, a lebontás itt folytatódik az objektumon belüli
+                                 * hivatkozás kiértékelésével (létezik-e, ha igen, akkor mi az, stb...)
+                                 */
+
+                                // belső hivatkozott név, csupán a továbbbontáshoz kell
                                 _operand2 = Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data);
                             }
 
@@ -78,26 +84,8 @@ namespace Luna_interpreter.Model.Structure.Classes
 
         public object Operation(object operand1, string operatorString, object operand2)
         {
-            return null;
+            return operand1 + operatorString + operand2;
         }
-
-        private bool GetData(object operand)
-        {
-            try
-            {
-                var client = new ManagerService.ManagerServiceClient();
-
-                client.ClientCredentials.UserName.UserName = "test";
-                client.ClientCredentials.UserName.Password = "test";
-
-                
-
-            }
-            catch (Exception exc)
-            {
-                Console.WriteLine(exc.Message);
-            }
-            return false;
-        }
+        
     }
 }

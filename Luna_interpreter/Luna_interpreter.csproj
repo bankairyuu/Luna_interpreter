@@ -50,13 +50,17 @@
   <ItemGroup>
     <Compile Include="GOLD_Engine\Parser.cs" />
     <Compile Include="Logical_Engine\Classes\Processor.cs" />
+    <Compile Include="Model\Container\Container.cs" />
     <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\Structure\Classes\Chain.cs" />
     <Compile Include="Model\Structure\Classes\DateTimeLiteral.cs" />
+    <Compile Include="Model\Structure\Classes\Statement.cs" />
+    <Compile Include="ServiceHandler\Document.cs" />
     <Compile Include="Model\Structure\Classes\Element.cs" />
     <Compile Include="Model\Structure\Classes\Expression.cs" />
     <Compile Include="Model\Structure\Classes\Factor.cs" />
     <Compile Include="Model\Structure\Classes\ProgramLine.cs" />
+    <Compile Include="ServiceHandler\Resource.cs" />
     <Compile Include="Model\Structure\Classes\SimpleExpression.cs" />
     <Compile Include="Model\Structure\Classes\Term.cs" />
     <Compile Include="Model\Structure\Context\NonTerminalContext.cs" />
@@ -64,6 +68,11 @@
     <Compile Include="Model\Structure\Interfaces\IServiceNonTerminals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DocumentEditorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\LocationService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,6 +88,34 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="GOLD_Engine\lang0.51.egt" />
+    <None Include="Service References\DocumentEditorService\DocumentEditorService.wsdl" />
+    <None Include="Service References\DocumentEditorService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentEditorService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentEditorService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentEditorService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentEditorService\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentEditorService\Luna_interpreter.DocumentEditorService.Document.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentEditorService\Luna_interpreter.DocumentEditorService.Enumeration.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentEditorService\Luna_interpreter.DocumentEditorService.LoginData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentEditorService\Luna_interpreter.DocumentEditorService.Section.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\LocationService\item.wsdl" />
     <None Include="Service References\LocationService\item.xsd">
       <SubType>Designer</SubType>
@@ -253,13 +290,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logical_Engine\Interfaces\" />
-    <Folder Include="Model\Container\" />
-    <Folder Include="Model\Services\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DocumentEditorService\" />
     <WCFMetadataStorage Include="Service References\LocationService\" />
     <WCFMetadataStorage Include="Service References\ManagerService\" />
   </ItemGroup>
@@ -289,6 +325,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ManagerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DocumentEditorService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DocumentEditorService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DocumentEditorService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DocumentEditorService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
