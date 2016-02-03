@@ -24,6 +24,8 @@ namespace Luna_interpreter.ServiceHandler
 
         private static object DocumentHandling(string[] path)
         {
+            // több ugyanolyan dokumentumnév van, így ... Ádámék faszok
+
             if (path.Length != 4) throw new Exception("Az elérési útvonal nem teljesíti a követelményeket ( Document.<DocumentName>.<SectionName>.<FieldName> )");
             try
             {
@@ -37,7 +39,6 @@ namespace Luna_interpreter.ServiceHandler
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
 
                 //var processes = bpmnclient.GetProcess(1);
-                
 
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
             }
@@ -51,6 +52,8 @@ namespace Luna_interpreter.ServiceHandler
 
         private static object ResourceHandling(string[] path)
         {
+
+            // Resource van kibővítve workforce-á
             try
             {
                 var client = new ManagerService.ManagerServiceClient();

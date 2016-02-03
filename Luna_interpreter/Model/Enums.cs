@@ -24,6 +24,7 @@ namespace Luna_interpreter.Model
             ExpressionList,
             Statement,
             DateTimeLiteral,
+            Indexer,
 
             undefined
         }

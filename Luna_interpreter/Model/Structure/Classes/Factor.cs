@@ -72,9 +72,9 @@ namespace Luna_interpreter.Model.Structure.Classes
                     }
                 }
 
-                if (_operator1 != null && _operator2 == null)
+                if (_operator1 == null && _operator2 == null)
                     throw new OperationCanceledException("Missing bracket(s)");
-                Console.WriteLine("Expression value: " + _operand + "\ttype: " + _operand.GetType());
+                Console.WriteLine("Factor value: " + _operand + "\ttype: " + _operand.GetType());
                 return _operand;
             }
             else if (node.Count() == 2)
@@ -112,7 +112,6 @@ namespace Luna_interpreter.Model.Structure.Classes
                     _operand = Operation(_operand, _operator, null);
                 Console.WriteLine("Factor value: " + _operand + "\ttype: " + _operand.GetType());
                 return _operand;
-
             }
             else
             {
@@ -156,10 +155,10 @@ namespace Luna_interpreter.Model.Structure.Classes
                         Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
 
                         returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
-                        returnValue = ServiceHandler.ServiceHandler.getData(returnValue as string);
+                        //returnValue = ServiceHandler.ServiceHandler.getData(returnValue as string);
 
                         //Console.WriteLine("Factor value: " + returnValue + "\ttype: " + returnValue.GetType());
-                        //return returnValue;
+                        return returnValue;
                         string DEBUG = "DEBUG";
                         return DEBUG;
                     }

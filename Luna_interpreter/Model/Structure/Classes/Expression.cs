@@ -109,8 +109,14 @@ namespace Luna_interpreter.Model.Structure.Classes
                     switch (operatorString)
                     {
                         case "=":
-                            operand1 = operand2;
-                            return operand1;
+                            if (Int32.Parse(operand1.ToString()) == Int32.Parse(operand2.ToString()))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
                         case "==":
                             if (Int32.Parse(operand1.ToString()) == Int32.Parse(operand2.ToString()))
                             {
@@ -219,8 +225,14 @@ namespace Luna_interpreter.Model.Structure.Classes
                     switch (operatorString)
                     {
                         case "=":
-                            operand1 = operand2;
-                            return operand1;
+                            if (float.Parse(operand1.ToString()) == float.Parse(operand2.ToString()))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
                         case "==":
                             if (float.Parse(operand1.ToString()) == float.Parse(operand2.ToString()))
                             {
@@ -329,8 +341,14 @@ namespace Luna_interpreter.Model.Structure.Classes
                     switch (operatorString)
                     {
                         case "=":
-                            operand1 = operand2;
-                            return operand1;
+                            if (operand1.ToString() == operand2.ToString())
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
                         case "==":
                             if (operand1.ToString() == operand2.ToString())
                             {
@@ -383,8 +401,14 @@ namespace Luna_interpreter.Model.Structure.Classes
                     switch (operatorString)
                     {
                         case "=":
-                            operand1 = operand2 as bool?;
-                            return operand1;
+                            if (operand1 as bool? == operand2 as bool?)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
                         case "==":
                             if (operand1 as bool? == operand2 as bool?)
                             {
