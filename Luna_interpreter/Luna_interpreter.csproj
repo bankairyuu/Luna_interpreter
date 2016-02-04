@@ -60,6 +60,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\WoLaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ServiceHandler\Document.cs" />
     <Compile Include="Model\Structure\Classes\Element.cs" />
     <Compile Include="Model\Structure\Classes\Expression.cs" />
@@ -368,6 +373,22 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ManagerService\ManagerService.wsdl" />
+    <None Include="Service References\WoLaService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\Luna_interpreter.WoLaService.Field.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WoLaService\WoLaService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logical_Engine\Interfaces\" />
@@ -380,6 +401,7 @@
     <WCFMetadataStorage Include="Service References\DocumentEditorService\" />
     <WCFMetadataStorage Include="Service References\LocationService\" />
     <WCFMetadataStorage Include="Service References\ManagerService\" />
+    <WCFMetadataStorage Include="Service References\WoLaService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\LocationService\item.disco" />
@@ -437,6 +459,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\BPMNEditorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WoLaService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WoLaService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WoLaService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WoLaService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

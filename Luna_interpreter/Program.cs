@@ -11,6 +11,8 @@ namespace Luna_interpreter
             //    throw new ArgumentException("The count of arguments is invalid! You have to give the Process instance, and the Command!");
             //}
 
+            //Model.Container.Container.processInstance = ;
+
             GOLD_Engine.MyParserClass parser = new GOLD_Engine.MyParserClass();
             if (parser.Setup())
             {
