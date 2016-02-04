@@ -85,9 +85,11 @@ namespace Luna_interpreter.Model.Structure.Classes
                 // értékadás/másolás
                 string type = Regex.Replace(node[0].Parent.ToString(), "[^0-9a-zA-Z]+", "");
                 Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
-                
-                object returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
+                object returnValue = null;
+
+                returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
                 Console.WriteLine("Term value: " + returnValue + "\ttype: " + returnValue.GetType());
+                
                 return returnValue;
             }
         }

@@ -106,354 +106,352 @@ namespace Luna_interpreter.Model.Structure.Classes
             {
                 if (operand1 is Int32)
                 {
-                    switch (operatorString)
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
                     {
-                        case "=":
-                            if (Int32.Parse(operand1.ToString()) == Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "==":
-                            if (Int32.Parse(operand1.ToString()) == Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "equals":
-                            if (Int32.Parse(operand1.ToString()) == Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "<>":
-                            if (Int32.Parse(operand1.ToString()) != Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "!=":
-                            if (Int32.Parse(operand1.ToString()) != Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "not =":
-                            if (Int32.Parse(operand1.ToString()) != Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "<":
-                            if (Int32.Parse(operand1.ToString()) < Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "<=":
-                            if (Int32.Parse(operand1.ToString()) <= Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "≤":
-                            if (Int32.Parse(operand1.ToString()) <= Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case ">":
-                            if (Int32.Parse(operand1.ToString()) > Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case ">=":
-                            if (Int32.Parse(operand1.ToString()) >= Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "≥":
-                            if (Int32.Parse(operand1.ToString()) >= Int32.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        default:
-                            return null;
+                        if (Int32.Parse(operand1.ToString()) == Int32.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    {
+                        if (Int32.Parse(operand1.ToString()) != Int32.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<=") || operatorString.Equals("≤"))
+                    {
+                        if (Int32.Parse(operand1.ToString()) <= Int32.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals(">=") || operatorString.Equals("≥"))
+                    {
+                        if (Int32.Parse(operand1.ToString()) > Int32.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<"))
+                    {
+                        if (Int32.Parse(operand1.ToString()) < Int32.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals(">"))
+                    {
+                        if (Int32.Parse(operand1.ToString()) > Int32.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return null;
                     }
                 }
                 else if (operand1 is float)
                 {
-                    switch (operatorString)
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
                     {
-                        case "=":
-                            if (float.Parse(operand1.ToString()) == float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "==":
-                            if (float.Parse(operand1.ToString()) == float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "equals":
-                            if (float.Parse(operand1.ToString()) == float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "<>":
-                            if (float.Parse(operand1.ToString()) != float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "!=":
-                            if (float.Parse(operand1.ToString()) != float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "not =":
-                            if (float.Parse(operand1.ToString()) != float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "<":
-                            if (float.Parse(operand1.ToString()) < float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "<=":
-                            if (float.Parse(operand1.ToString()) <= float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "≤":
-                            if (float.Parse(operand1.ToString()) <= float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case ">":
-                            if (float.Parse(operand1.ToString()) > float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case ">=":
-                            if (float.Parse(operand1.ToString()) >= float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "≥":
-                            if (float.Parse(operand1.ToString()) >= float.Parse(operand2.ToString()))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        default:
-                            return null;
+                        if (float.Parse(operand1.ToString()) == float.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    {
+                        if (float.Parse(operand1.ToString()) != float.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<=") || operatorString.Equals("≤"))
+                    {
+                        if (float.Parse(operand1.ToString()) <= float.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals(">=") || operatorString.Equals("≥"))
+                    {
+                        if (float.Parse(operand1.ToString()) > float.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<"))
+                    {
+                        if (float.Parse(operand1.ToString()) < float.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals(">"))
+                    {
+                        if (float.Parse(operand1.ToString()) > float.Parse(operand2.ToString()))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return null;
                     }
                 }
                 else if (operand1 is string)
                 {
-                    switch (operatorString)
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
                     {
-                        case "=":
-                            if (operand1.ToString() == operand2.ToString())
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "==":
-                            if (operand1.ToString() == operand2.ToString())
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "equals":
-                            if (operand1.ToString() == operand2.ToString())
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "<>":
-                            if (operand1.ToString() != operand2.ToString())
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "!=":
-                            if (operand1.ToString() != operand2.ToString())
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "not =":
-                            if (operand1.ToString() != operand2.ToString())
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
+                        if (operand1.ToString() == operand2.ToString())
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    {
+                        if (operand1.ToString() != operand2.ToString())
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return null;
                     }
                 }
                 else if (operand1 is bool)
                 {
-                    switch (operatorString)
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
                     {
-                        case "=":
-                            if (operand1 as bool? == operand2 as bool?)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "==":
-                            if (operand1 as bool? == operand2 as bool?)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "equals":
-                            if (operand1 as bool? == operand2 as bool?)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "<>":
-                            if (operand1 as bool? != operand2 as bool?)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "!=":
-                            if (operand1 as bool? != operand2 as bool?)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-                        case "not =":
-                            if (operand1 as bool? != operand2 as bool?)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
+                        if (operand1 as bool? == operand2 as bool?)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    {
+                        if (operand1 as bool? != operand2 as bool?)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else if (operand1 is DateTime)
+                {
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
+                    {
+                        if (operand1 as DateTime? == operand2 as DateTime?)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    {
+                        if (operand1 as DateTime? != operand2 as DateTime?)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<=") || operatorString.Equals("≤"))
+                    {
+                        if ((DateTime) operand1 <= (DateTime) operand2)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals(">=") || operatorString.Equals("≥"))
+                    {
+                        if ((DateTime)operand1 >= (DateTime)operand2)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<"))
+                    {
+                        if ((DateTime)operand1 < (DateTime)operand2)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals(">"))
+                    {
+                        if ((DateTime)operand1 > (DateTime)operand2)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else if (operand1 is TimeSpan)
+                {
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
+                    {
+                        if (operand1 as TimeSpan? == operand2 as TimeSpan?)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    {
+                        if (operand1 as TimeSpan? != operand2 as TimeSpan?)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<=") || operatorString.Equals("≤"))
+                    {
+                        if ((TimeSpan)operand1 <= (TimeSpan)operand2)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals(">=") || operatorString.Equals("≥"))
+                    {
+                        if ((TimeSpan)operand1 >= (TimeSpan)operand2)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals("<"))
+                    {
+                        if ((TimeSpan)operand1 < (TimeSpan)operand2)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (operatorString.Equals(">"))
+                    {
+                        if ((TimeSpan)operand1 > (TimeSpan)operand2)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return null;
                     }
                 }
             }

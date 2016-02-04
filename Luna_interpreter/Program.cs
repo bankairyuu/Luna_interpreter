@@ -17,17 +17,18 @@ namespace Luna_interpreter
                 Console.WriteLine(Environment.NewLine + "\t---------\tParse Tree\t---------"+ Environment.NewLine);
                 //Console.WriteLine(parser.Parsing("((-5 + -15) * 5) <= -20 * (2 + 3)"));
                 //Console.WriteLine(parser.Parsing("yes == no"));
-                //Console.WriteLine(parser.Parsing("x != D.C.v"));
-                //Console.WriteLine(parser.Parsing("x != D.C.v()"));
-                //Console.WriteLine(parser.Parsing("x != D.C.v(a)"));
-                //Console.WriteLine(parser.Parsing("x != D.C.v(a, b)"));
                 //Console.WriteLine(parser.Parsing("(((-5 + -15) * 5) <= -20 * (2 + 3)) == yes"));
                 //Console.WriteLine(parser.Parsing("2016.01.28"));
-                //Console.WriteLine(parser.Parsing("Document.Managers.JohnCena.DepartmentName"));
                 //Console.WriteLine(parser.Parsing("Workflow[\"MF1\"].Status"));
-                Console.WriteLine(parser.Parsing("Workflow[W1M].Status"));
-                Console.WriteLine(parser.Parsing("Workflow[W1M].Status.Kecske"));
-                Console.WriteLine(parser.Parsing("Workflow[W1M].Status[Kecske].veljuh"));
+                //Console.WriteLine(parser.Parsing("Workflow[W1M].Status"));
+                //Console.WriteLine(parser.Parsing("Workflow[W1M].Status.Kecske"));
+                //Console.WriteLine(parser.Parsing("Workflow[W1M].Status[Kecske].veljuh"));
+                //Console.WriteLine(parser.Parsing("20:12"));
+                //Console.WriteLine(parser.Parsing("20:12:22"));
+                //Console.WriteLine(parser.Parsing("02.12.1922"));
+                //Console.WriteLine(parser.Parsing("02.12.1922 12:12"));
+                //Console.WriteLine(parser.Parsing("02.12.1922 11:12:13"));
+                Console.WriteLine(parser.Parsing("62.58.1922 equals 62.58.1922"));
                 Console.WriteLine(Environment.NewLine + "\t---------\tParse Tree\t---------" + Environment.NewLine);
             }
 

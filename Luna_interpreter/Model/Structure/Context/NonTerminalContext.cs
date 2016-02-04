@@ -21,6 +21,8 @@ namespace Luna_interpreter.Model.Structure.Context
             _strategies.Add(Enums.eNonTerminals.Element,            new Classes.Element());
             _strategies.Add(Enums.eNonTerminals.DateTimeLiteral,    new Classes.DateTimeLiteral());
             _strategies.Add(Enums.eNonTerminals.Indexer,            new Classes.Indexer());
+            _strategies.Add(Enums.eNonTerminals.Date,               new Classes.Date());
+            _strategies.Add(Enums.eNonTerminals.Time,               new Classes.Time());
         }
 
         public static object Execute (Enums.eNonTerminals type, GOLD.Reduction node)

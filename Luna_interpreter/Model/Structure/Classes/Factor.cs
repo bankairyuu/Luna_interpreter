@@ -162,6 +162,14 @@ namespace Luna_interpreter.Model.Structure.Classes
                         string DEBUG = "DEBUG";
                         return DEBUG;
                     }
+                    else if (node[0].Parent.ToString().Equals("<DateTimeLiteral>"))
+                    {
+                        string type = Regex.Replace(node[0].Parent.ToString(), "[^0-9a-zA-Z]+", "");
+                        Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
+
+                        returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
+                        return returnValue;
+                    }
                     else
                     {
                         throw new Exception("Literal define error - Luna_interpreter.Model.Structure.Classes.Factor.Execute");
