@@ -66,6 +66,21 @@ namespace Luna_interpreter.Model.Structure.Classes
                 string[] _op2 = _operand2.ToString().Split(':');
 
                 //TODO: validáció a dátumra és az időre
+                if ((Int32.Parse(_op1[0]) < 1 || Int32.Parse(_op1[0]) > 31) || (Int32.Parse(_op1[1]) < 1 || Int32.Parse(_op1[1]) > 12) || Int32.Parse(_op1[2]) < 1900
+                    || (Int32.Parse(_op2[0]) < 0 || Int32.Parse(_op2[0]) > 24) || (Int32.Parse(_op2[1]) < 0 || Int32.Parse(_op2[1]) > 60))
+                {
+                    throw new FormatException("Not valid Date-Time format");
+                }
+                else
+                {
+                    if (_op2.Length == 3)
+                    {
+                        if ((Int32.Parse(_op2[2]) < 0 || Int32.Parse(_op2[2]) > 60))
+                        {
+                            throw new FormatException("Not valid Date-Time format");
+                        }
+                    }
+                }
 
                 if (_op2.Length == 3)
                 {
@@ -90,6 +105,10 @@ namespace Luna_interpreter.Model.Structure.Classes
                 {
                     //Date
                     string[] _op1 = _operand1.ToString().Split('.');
+                    if ((Int32.Parse(_op1[0]) < 1 || Int32.Parse(_op1[0]) > 31) || (Int32.Parse(_op1[1]) < 1 || Int32.Parse(_op1[1]) > 12) || Int32.Parse(_op1[2]) < 1900)
+                        throw new FormatException("Not valid Date format" + Environment.NewLine);
+                    else if (Int32.Parse(_op1[1]) == 2)
+                        Console.WriteLine("Február");
                     return new DateTime(Int32.Parse(_op1[2]), Int32.Parse(_op1[1]), Int32.Parse(_op1[0]));
                 }
                 else
@@ -98,10 +117,14 @@ namespace Luna_interpreter.Model.Structure.Classes
                     string[] _op2 = _operand1.ToString().Split(':');
                     if (_op2.Length == 3)
                     {
+                        if ((Int32.Parse(_op2[0]) < 0 || Int32.Parse(_op2[0]) > 24) || (Int32.Parse(_op2[1]) < 0 || Int32.Parse(_op2[1]) > 60) || (Int32.Parse(_op2[2]) < 0 || Int32.Parse(_op2[2]) > 60))
+                            throw new FormatException("Not valid Time format" + Environment.NewLine);
                         return new TimeSpan(Int32.Parse(_op2[0]), Int32.Parse(_op2[1]), Int32.Parse(_op2[2]));
                     }
                     else
                     {
+                        if ((Int32.Parse(_op2[0]) < 0 || Int32.Parse(_op2[0]) > 24) || (Int32.Parse(_op2[1]) < 0 || Int32.Parse(_op2[1]) > 60))
+                            throw new FormatException("Not valid Time format" + Environment.NewLine);
                         return new TimeSpan(Int32.Parse(_op2[0]), Int32.Parse(_op2[1]), 0);
                     }
                 }

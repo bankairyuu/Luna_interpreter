@@ -89,7 +89,7 @@ namespace Luna_interpreter.Model.Structure.Classes
 
                 returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
                 Console.WriteLine("Term value: " + returnValue + "\ttype: " + returnValue.GetType());
-                
+
                 return returnValue;
             }
         }

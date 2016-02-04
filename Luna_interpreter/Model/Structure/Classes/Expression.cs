@@ -252,6 +252,12 @@ namespace Luna_interpreter.Model.Structure.Classes
                 }
                 else if (operand1 is string)
                 {
+                    if (operand1.Equals("ERROR") || operand2.Equals("ERROR"))
+                    {
+                        string ERROR = "ERROR";
+                        return ERROR;
+                    }
+
                     if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
                     {
                         if (operand1.ToString() == operand2.ToString())
