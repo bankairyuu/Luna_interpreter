@@ -165,6 +165,87 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return null;
                     }
                 }
+                else if (operand1 is bool)
+                {
+                    switch (operatorString)
+                    {
+                        case "+":
+                            throw new InvalidOperationException();
+                        case "-":
+                            throw new InvalidOperationException();
+                        case "or":
+                            if ((bool)operand1 || (bool)operand2)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        case "|":
+                            throw new InvalidOperationException();
+                        case "||":
+                            if ((bool)operand1 || (bool)operand2)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        case "xor":
+                            if (((bool)operand1 == true && (bool)operand2 == false) || ((bool)operand1 == false && (bool)operand2 == true))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        default:
+                            return null;
+                    }
+                }
+                else if (operand1 is DateTime)
+                {
+                    switch (operatorString)
+                    {
+                        case "+":
+                            throw new NotImplementedException();
+                        case "-":
+                            throw new NotImplementedException();
+                        case "or":
+                            throw new InvalidOperationException();
+                        case "|":
+                            throw new InvalidOperationException();
+                        case "||":
+                            throw new InvalidOperationException();
+                        case "xor":
+                            throw new InvalidOperationException();
+                        default:
+                            return null;
+                    }
+                }
+                else if (operand1 is TimeSpan)
+                {
+                    switch (operatorString)
+                    {
+                        case "+":
+                            throw new NotImplementedException();
+                        case "-":
+                            throw new NotImplementedException();
+                        case "or":
+                            throw new InvalidOperationException();
+                        case "|":
+                            throw new InvalidOperationException();
+                        case "||":
+                            throw new InvalidOperationException();
+                        case "xor":
+                            throw new InvalidOperationException();
+                        default:
+                            return null;
+                    }
+                }
             }
             else
             {
