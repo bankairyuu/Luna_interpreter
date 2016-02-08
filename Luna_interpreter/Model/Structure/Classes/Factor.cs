@@ -177,11 +177,12 @@ namespace Luna_interpreter.Model.Structure.Classes
                         try
                         {
                             returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
-                        }catch(Exception Exc)
+                        }
+                        catch (Exception Exc)
                         {
-                            Console.WriteLine(Exc.Message);
-                            string DEBUG = "ERROR";
-                            returnValue = DEBUG;
+                            Console.WriteLine("->" + Exc.Message);
+                            string ERROR = "ERROR";
+                            return ERROR;
                         }
                         return returnValue;
                     }

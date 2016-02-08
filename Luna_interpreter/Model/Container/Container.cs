@@ -8,6 +8,6 @@ namespace Luna_interpreter.Model.Container
 {
     public static class Container
     {
-        public static string processInstance = null;
+        public static int processInstance = -1;
     }
 }

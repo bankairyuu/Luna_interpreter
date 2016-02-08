@@ -11,7 +11,7 @@ namespace Luna_interpreter
             //    throw new ArgumentException("The count of arguments is invalid! You have to give the Process instance, and the Command!");
             //}
 
-            //Model.Container.Container.processInstance = ;
+            Model.Container.Container.processInstance = 43;
 
             GOLD_Engine.MyParserClass parser = new GOLD_Engine.MyParserClass();
             if (parser.Setup())
@@ -21,10 +21,10 @@ namespace Luna_interpreter
                 //Console.WriteLine(parser.Parsing("yes == no"));
                 //Console.WriteLine(parser.Parsing("(((-5 + -15) * 5) <= -20 * (2 + 3)) == yes"));
                 //Console.WriteLine(parser.Parsing("2016.01.28"));
-                Console.WriteLine(parser.Parsing("Document[\"MF1\"].Status"));
+                //Console.WriteLine(parser.Parsing("Document[\"MF1\"].Status"));
                 //Console.WriteLine(parser.Parsing("Workflow[W1M].Status"));
                 //Console.WriteLine(parser.Parsing("Workflow[W1M].Status.Kecske"));
-                //Console.WriteLine(parser.Parsing("Workflow[W1M].Status[Kecske].veljuh"));
+                Console.WriteLine(parser.Parsing("Document[Szerzodes].Section[Section1].Field[Datum]"));
                 //Console.WriteLine(parser.Parsing("20:12"));
                 //Console.WriteLine(parser.Parsing("20:12:22"));
                 //Console.WriteLine(parser.Parsing("02.12.1922"));

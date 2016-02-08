@@ -12,14 +12,15 @@ namespace Luna_interpreter.ServiceHandler
         {
             string[] path = _path.Split('.');
             Stack<string> dataPath = new Stack<string>();
-            for (int i = path.Length - 1; i > 0; i--)
+            for (int i = 0; i < path.Length; i++)
             {
                 dataPath.Push(path[i]);
             }
             string[] type = path[0].Split(':');
             if (type[0].Equals("Document"))
             {
-                return DocumentHandling(dataPath);
+                Console.WriteLine("### Document Handling ###");
+                return DocumentHandling(dataPath, type[1]);
             }
             else if (type[0].Equals("Resource"))
             {
@@ -28,7 +29,7 @@ namespace Luna_interpreter.ServiceHandler
             throw new NotImplementedException("A rendszer csak a Document és a Resource típusú objektum orientált kéréseket támogatja");
         }
 
-        private static object DocumentHandling(Stack<string> path)
+        private static object DocumentHandling(Stack<string> path, string docName)
         {
             // több ugyanolyan dokumentumnév van, így ... Ádámék faszok
 
@@ -41,14 +42,40 @@ namespace Luna_interpreter.ServiceHandler
 
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
 
-                string[] innerPath = path.Pop().Split(':');
-                int docID = client.GetDocumentId(innerPath[1], 43, null);
+                Stack<string> hStack = new Stack<string>();
+                string[] helper;
+                while (path.Count != 0)
+                {
+                    Console.WriteLine("~" + path.Count);
+                    helper = path.Pop().Split(':');
+                    if (helper.Length == 2)
+                    {
+                        Console.WriteLine("~" + helper[1]);
+                        hStack.Push(helper[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("~" + helper[0]);
+                        hStack.Push(helper[0]);
+                    }
+                }
+                Console.WriteLine(">>> " + hStack.Count);
 
+                object returnValue = client.GetFieldValueByProccessInstace(Model.Container.Container.processInstance, hStack.Pop(), hStack.Pop(), hStack.Pop());
+                // TODO itt valami null lesz, és exceptiont okoz... 
+                Console.WriteLine(">>> " + returnValue);
+                
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
+                return returnValue;
             }
             catch (Exception exc)
             {
-                Console.WriteLine(exc.Message);
+                Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+                Console.WriteLine("x " + exc.Message);
+                Console.WriteLine("x A hivatkozott érték nem létezik");
+                Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+                string ERROR = "ERROR";
+                return ERROR;
             }
             
             return null;
