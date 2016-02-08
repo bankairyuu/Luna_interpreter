@@ -86,8 +86,16 @@ namespace Luna_interpreter.Model.Structure.Classes
                 string type = Regex.Replace(node[0].Parent.ToString(), "[^0-9a-zA-Z]+", "");
                 Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
                 object returnValue = null;
-
-                returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
+                try
+                {
+                    returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.Message);
+                    string ERROR = "ERROR";
+                    return ERROR;
+                }
                 Console.WriteLine("Term value: " + returnValue + "\ttype: " + returnValue.GetType());
 
                 return returnValue;

@@ -11,34 +11,38 @@ namespace Luna_interpreter.ServiceHandler
         public static object getData( string _path )
         {
             string[] path = _path.Split('.');
-            if (path[0].Equals("Document"))
+            Stack<string> dataPath = new Stack<string>();
+            for (int i = path.Length - 1; i > 0; i--)
             {
-                return DocumentHandling(path);
+                dataPath.Push(path[i]);
             }
-            else if (path[0].Equals("Resource"))
+            string[] type = path[0].Split(':');
+            if (type[0].Equals("Document"))
             {
-                return ResourceHandling(path);
+                return DocumentHandling(dataPath);
+            }
+            else if (type[0].Equals("Resource"))
+            {
+                return ResourceHandling(dataPath);
             }
             throw new NotImplementedException("A rendszer csak a Document és a Resource típusú objektum orientált kéréseket támogatja");
         }
 
-        private static object DocumentHandling(string[] path)
+        private static object DocumentHandling(Stack<string> path)
         {
             // több ugyanolyan dokumentumnév van, így ... Ádámék faszok
 
-            if (path.Length != 4) throw new Exception("Az elérési útvonal nem teljesíti a követelményeket ( Document.<DocumentName>.<SectionName>.<FieldName> )");
             try
             {
-                var client = new DocumentEditorService.DocumentEditorServiceClient();
-                var bpmnclient = new BPMNEditorService.BPMNEditorClient();
+                var client = new WoLaService.WoLaServiceClient();
 
                 client.ClientCredentials.UserName.UserName = "test";
                 client.ClientCredentials.UserName.Password = "test";
 
-
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
 
-                //var processes = bpmnclient.GetProcess(1);
+                string[] innerPath = path.Pop().Split(':');
+                int docID = client.GetDocumentId(innerPath[1], 43, null);
 
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
             }
@@ -50,7 +54,7 @@ namespace Luna_interpreter.ServiceHandler
             return null;
         }
 
-        private static object ResourceHandling(string[] path)
+        private static object ResourceHandling(Stack<string> path)
         {
 
             // Resource van kibővítve workforce-á

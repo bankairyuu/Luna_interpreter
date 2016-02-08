@@ -155,12 +155,20 @@ namespace Luna_interpreter.Model.Structure.Classes
                         Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
 
                         returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
-                        //returnValue = ServiceHandler.ServiceHandler.getData(returnValue as string);
+                        try
+                        {
+                            returnValue = ServiceHandler.ServiceHandler.getData(returnValue as string);
+                        }
+                        catch (Exception exc)
+                        {
+                            Console.WriteLine(exc.Message);
+                            string ERROR = "ERROR";
+                            return ERROR;
+                        }
 
-                        //Console.WriteLine("Factor value: " + returnValue + "\ttype: " + returnValue.GetType());
+                        Console.WriteLine("Factor value: " + returnValue + "\ttype: " + returnValue.GetType());
                         return returnValue;
-                        string DEBUG = "DEBUG";
-                        return DEBUG;
+                        
                     }
                     else if (node[0].Parent.ToString().Equals("<DateTimeLiteral>"))
                     {
