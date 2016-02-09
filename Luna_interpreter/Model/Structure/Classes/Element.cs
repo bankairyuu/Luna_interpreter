@@ -25,7 +25,6 @@ namespace Luna_interpreter.Model.Structure.Classes
                             Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
 
                             _operand = Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data);
-
                             break;
 
                         case SymbolType.Error:

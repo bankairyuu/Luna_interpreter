@@ -17,7 +17,7 @@ namespace Luna_interpreter.Model.Structure.Classes
 
                 if (node[1].Data.ToString().Contains("\""))
                 {
-                    string returnValue = Regex.Replace(node[1].Data.ToString(), "[^0-9a-zA-Z]+", "");
+                    string returnValue = Regex.Replace(node[1].Data.ToString(), "\"", "");
                     return returnValue;
                 }
                 else
