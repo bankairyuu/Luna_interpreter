@@ -33,7 +33,7 @@ namespace Luna_interpreter.GOLD_Engine
             if (Parse(new StringReader(instructions)))
             {
                 string s = DrawReductionTree(Root);
-                Logical_Engine.Classes.Processor processor = new Logical_Engine.Classes.Processor(Root);
+                //Logical_Engine.Classes.Processor processor = new Logical_Engine.Classes.Processor(Root);
 
                 return s;
             }

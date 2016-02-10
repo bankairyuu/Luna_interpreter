@@ -153,11 +153,39 @@ namespace Luna_interpreter.Model.Structure.Classes
                     {
                         string type = Regex.Replace(node[0].Parent.ToString(), "[^0-9a-zA-Z]+", "");
                         Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
-
-                        returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
                         try
                         {
+                            returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
                             returnValue = ServiceHandler.ServiceHandler.getData(returnValue as string);
+                            int s;
+                            if (int.TryParse(returnValue.ToString(), out s))
+                            {
+                                return s;
+                            }
+
+                            float t;
+                            if (float.TryParse(returnValue.ToString(), out t))
+                            {
+                                return t;
+                            }
+
+                            if (returnValue.ToString().Contains("."))
+                            {
+                                string[] u = returnValue.ToString().Split('.');
+                                if (u.Length == 4)
+                                {
+                                    try
+                                    {
+                                        return new DateTime(Int32.Parse(u[0]), Int32.Parse(u[1]), Int32.Parse(u[2]));
+                                    }
+                                    catch(Exception exc)
+                                    {
+                                        Console.WriteLine(exc.Message);
+                                        string ERROR = "ERROR";
+                                        return ERROR;
+                                    }
+                                }
+                            }
                         }
                         catch (Exception exc)
                         {
@@ -180,7 +208,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                         }
                         catch (Exception Exc)
                         {
-                            Console.WriteLine("->" + Exc.Message);
+                            Console.WriteLine(Exc.Message);
                             string ERROR = "ERROR";
                             return ERROR;
                         }

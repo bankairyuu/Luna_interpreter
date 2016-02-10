@@ -19,7 +19,6 @@ namespace Luna_interpreter.ServiceHandler
             string[] type = path[0].Split(':');
             if (type[0].Equals("Document"))
             {
-                Console.WriteLine("### Document Handling ###");
                 return DocumentHandling(dataPath, type[1]);
             }
             else if (type[0].Equals("Resource"))
@@ -31,41 +30,30 @@ namespace Luna_interpreter.ServiceHandler
 
         private static object DocumentHandling(Stack<string> path, string docName)
         {
-            // több ugyanolyan dokumentumnév van, így ... Ádámék faszok
-
             try
             {
                 var client = new WoLaService.WoLaServiceClient();
 
                 client.ClientCredentials.UserName.UserName = "test";
                 client.ClientCredentials.UserName.Password = "test";
-
-                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
-
+                
                 Stack<string> hStack = new Stack<string>();
                 string[] helper;
                 while (path.Count != 0)
                 {
-                    Console.WriteLine("~" + path.Count);
                     helper = path.Pop().Split(':');
                     if (helper.Length == 2)
                     {
-                        Console.WriteLine("~" + helper[1]);
                         hStack.Push(helper[1]);
                     }
                     else
                     {
-                        Console.WriteLine("~" + helper[0]);
                         hStack.Push(helper[0]);
                     }
                 }
-                Console.WriteLine(">>> " + hStack.Count);
 
                 object returnValue = client.GetFieldValueByProccessInstace(Model.Container.Container.processInstance, hStack.Pop(), hStack.Pop(), hStack.Pop());
-                // TODO itt valami null lesz, és exceptiont okoz... 
-                Console.WriteLine(">>> " + returnValue);
                 
-                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~");
                 return returnValue;
             }
             catch (Exception exc)
@@ -77,8 +65,6 @@ namespace Luna_interpreter.ServiceHandler
                 string ERROR = "ERROR";
                 return ERROR;
             }
-            
-            return null;
         }
 
         private static object ResourceHandling(Stack<string> path)

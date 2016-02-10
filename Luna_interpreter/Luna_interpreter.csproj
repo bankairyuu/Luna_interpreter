@@ -54,6 +54,7 @@
     <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\Structure\Classes\Chain.cs" />
     <Compile Include="Model\Structure\Classes\DateTimeLiteral.cs" />
+    <Compile Include="Model\Structure\Classes\GetExpression.cs" />
     <Compile Include="Model\Structure\Classes\Indexer.cs" />
     <Compile Include="Service References\BPMNEditorService\Reference.cs">
       <AutoGen>True</AutoGen>

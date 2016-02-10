@@ -25,6 +25,10 @@ namespace Luna_interpreter
                 //Console.WriteLine(parser.Parsing("Workflow[W1M].Status"));
                 //Console.WriteLine(parser.Parsing("Workflow[W1M].Status.Kecske"));
                 Console.WriteLine(parser.Parsing("Document[\"PI_Szerzodes\"].Section[Section4].Field[alairasszovege]"));
+                Console.WriteLine(parser.Parsing("Document[\"PI_Szerzodes\"].Section[Section4].Field[datumszovege]"));
+                Console.WriteLine(parser.Parsing("Document[\"PI_Szerzodes\"].Section[Section4].Field[datumszovege] == 22.11.2015"));
+                Console.WriteLine(parser.Parsing("get from [titkárnő]"));
+                //Console.WriteLine(parser.Parsing("display (5 == 5)"));
                 //Console.WriteLine(parser.Parsing("20:12"));
                 //Console.WriteLine(parser.Parsing("20:12:22"));
                 //Console.WriteLine(parser.Parsing("02.12.1922"));
