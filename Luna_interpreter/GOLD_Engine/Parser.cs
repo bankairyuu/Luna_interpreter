@@ -19,7 +19,7 @@ namespace Luna_interpreter.GOLD_Engine
         {
             try
             {
-                return parser.LoadTables(Environment.CurrentDirectory + @"/../../../Luna_interpreter/Gold_Engine/lang0.51.egt");
+                return parser.LoadTables(Environment.CurrentDirectory + @"/../../../Luna_interpreter/Gold_Engine/lang0.52.egt");
             }
             catch (Exception exc)
             {
@@ -33,7 +33,7 @@ namespace Luna_interpreter.GOLD_Engine
             if (Parse(new StringReader(instructions)))
             {
                 string s = DrawReductionTree(Root);
-                //Logical_Engine.Classes.Processor processor = new Logical_Engine.Classes.Processor(Root);
+                Logical_Engine.Classes.Processor processor = new Logical_Engine.Classes.Processor(Root);
 
                 return s;
             }

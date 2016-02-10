@@ -28,6 +28,15 @@ namespace Luna_interpreter.Model
             Date,
             Indexer,
 
+            GetExpression,
+            Container,
+            Set,
+            List,
+            WhereClosure,
+            OrderByClosure,
+            Items,
+            Item,
+            
             undefined
         }
 

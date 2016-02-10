@@ -53,9 +53,16 @@
     <Compile Include="Model\Container\Container.cs" />
     <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\Structure\Classes\Chain.cs" />
+    <Compile Include="Model\Structure\Classes\Container.cs" />
     <Compile Include="Model\Structure\Classes\DateTimeLiteral.cs" />
     <Compile Include="Model\Structure\Classes\GetExpression.cs" />
     <Compile Include="Model\Structure\Classes\Indexer.cs" />
+    <Compile Include="Model\Structure\Classes\Items.cs" />
+    <Compile Include="Model\Structure\Classes\List.cs" />
+    <Compile Include="Model\Structure\Classes\OrderByClosure.cs" />
+    <Compile Include="Model\Structure\Classes\Set.cs" />
+    <Compile Include="Model\Structure\Classes\Statement.cs" />
+    <Compile Include="Model\Structure\Classes\WhereClosure.cs" />
     <Compile Include="Service References\BPMNEditorService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="GOLD_Engine\lang0.51.egt" />
     <None Include="Service References\BPMNEditorService\BPMNEditor.wsdl" />
     <None Include="Service References\BPMNEditorService\item.xsd">
       <SubType>Designer</SubType>

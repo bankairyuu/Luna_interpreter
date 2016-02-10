@@ -67,7 +67,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 {
                     try
                     {
-                        return new DateTime(Int32.Parse(_op1[2]), Int32.Parse(_op1[1]), Int32.Parse(_op1[0]), Int32.Parse(_op2[0]), Int32.Parse(_op2[1]), Int32.Parse(_op2[2]));
+                        return new DateTime(Int32.Parse(_op1[0]), Int32.Parse(_op1[1]), Int32.Parse(_op1[2]), Int32.Parse(_op2[0]), Int32.Parse(_op2[1]), Int32.Parse(_op2[2]));
                     }
                     catch (Exception exc)
                     {
@@ -81,7 +81,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 {
                     try
                     {
-                        return new DateTime(Int32.Parse(_op1[2]), Int32.Parse(_op1[1]), Int32.Parse(_op1[0]), Int32.Parse(_op2[0]), Int32.Parse(_op2[1]), 0);
+                        return new DateTime(Int32.Parse(_op1[0]), Int32.Parse(_op1[1]), Int32.Parse(_op1[2]), Int32.Parse(_op2[0]), Int32.Parse(_op2[1]), 0);
                     }
                     catch (Exception exc)
                     {
@@ -107,7 +107,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                     string[] _op1 = _operand1.ToString().Split('.');
                     try
                     {
-                        return new DateTime(Int32.Parse(_op1[2]), Int32.Parse(_op1[1]), Int32.Parse(_op1[0]));
+                        return new DateTime(Int32.Parse(_op1[0]), Int32.Parse(_op1[1]), Int32.Parse(_op1[2]));
                     }
                     catch (Exception exc)
                     {

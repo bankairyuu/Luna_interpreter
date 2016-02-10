@@ -1,17 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using GOLD;
 
 namespace Luna_interpreter.Model.Structure.Classes
 {
-    class GetExpression : Interfaces.INonTerminals
+    class Container : Interfaces.INonTerminals
     {
         public object Execute(Reduction node)
         {
-
-            Console.WriteLine(node.Count());
-
-            string DEBUG = "DEBUG";
-            return DEBUG;
+            throw new NotImplementedException();
         }
 
         public object Operation(object operand1, string operatorString, object operand2)
