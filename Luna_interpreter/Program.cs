@@ -27,8 +27,8 @@ namespace Luna_interpreter
                 //Console.WriteLine(parser.Parsing("Workflow[W1M].Status.Kecske"));
                 //Console.WriteLine(parser.Parsing("Document[\"PI_Szerzodes\"].Section[Section4].Field[alairasszovege]"));
                 //Console.WriteLine(parser.Parsing("Document[\"PI_Szerzodes\"].Section[Section4].Field[datumszovege]"));
-                //Console.WriteLine(parser.Parsing("Document[\"PI_Szerzodes\"].Section[Section4].Field[datumszovege] == 2015.11.22"));
-                Console.WriteLine(parser.Parsing("get from [titkárnő, néger] where \"asdf > 100 && fdas == 2\""));
+                Console.WriteLine(parser.Parsing("Document[\"PI_Szerzodes\"].Section[Section4].Field[datumszovege] == 2015.11.22."));
+                //Console.WriteLine(parser.Parsing("get from [titkárnő, néger] where \"asdf > 100 && fdas == 2\""));
                 //Console.WriteLine(parser.Parsing("display (5 == 5)"));
                 //Console.WriteLine(parser.Parsing("20:12"));
                 //Console.WriteLine(parser.Parsing("20:12:22"));
@@ -37,18 +37,6 @@ namespace Luna_interpreter
                 //Console.WriteLine(parser.Parsing("02.12.1922 11:12:13"));
                 //Console.WriteLine(parser.Parsing("62.58.1922 equals 62.58.1922"));
                 Console.WriteLine(Environment.NewLine + "\t---------\tParse Tree\t---------" + Environment.NewLine);
-
-                int[] numbers = new int[7] {0, 1, 2, 3, 4, 5, 6 };
-                var numQuery =
-                    from num in numbers
-                    where (num % 2) == 0
-                    select num;
-
-                foreach (int num in numQuery)
-                {
-                    Console.Write("{0,1} ", num);
-                }
-
             }
 
             Console.ReadLine();
