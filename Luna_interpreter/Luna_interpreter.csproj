@@ -60,7 +60,6 @@
     <Compile Include="Model\Structure\Classes\Items.cs" />
     <Compile Include="Model\Structure\Classes\List.cs" />
     <Compile Include="Model\Structure\Classes\OrderByClosure.cs" />
-    <Compile Include="Model\Structure\Classes\Set.cs" />
     <Compile Include="Model\Structure\Classes\Statement.cs" />
     <Compile Include="Model\Structure\Classes\WhereClosure.cs" />
     <Compile Include="Service References\BPMNEditorService\Reference.cs">

@@ -25,7 +25,6 @@ namespace Luna_interpreter.Model.Structure.Context
             _strategies.Add(Enums.eNonTerminals.Time,               new Classes.Time());
             _strategies.Add(Enums.eNonTerminals.GetExpression,      new Classes.GetExpression());
             _strategies.Add(Enums.eNonTerminals.Container,          new Classes.Container());
-            _strategies.Add(Enums.eNonTerminals.Set,                new Classes.Set());
             _strategies.Add(Enums.eNonTerminals.List,               new Classes.List());
             _strategies.Add(Enums.eNonTerminals.WhereClosure,       new Classes.WhereClosure());
             _strategies.Add(Enums.eNonTerminals.OrderByClosure,     new Classes.OrderByClosure());

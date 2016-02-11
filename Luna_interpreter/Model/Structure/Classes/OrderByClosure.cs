@@ -11,7 +11,8 @@ namespace Luna_interpreter.Model.Structure.Classes
     {
         public object Execute(Reduction node)
         {
-            throw new NotImplementedException();
+            string DEBUG = "DEBUG - OrderBy";
+            return DEBUG;
         }
 
         public object Operation(object operand1, string operatorString, object operand2)

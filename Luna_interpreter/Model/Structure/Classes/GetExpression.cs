@@ -1,5 +1,7 @@
 ﻿using System;
 using GOLD;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace Luna_interpreter.Model.Structure.Classes
 {
@@ -9,6 +11,15 @@ namespace Luna_interpreter.Model.Structure.Classes
         {
 
             Console.WriteLine(node.Count());
+
+            for (int i=2; i< node.Count(); i++)
+            {
+                string type = Regex.Replace(node[i].Parent.ToString(), "[^0-9a-zA-Z]+", "");
+                Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
+
+                object retVal = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[i].Data);
+                Console.WriteLine(retVal);
+            }
 
             string DEBUG = "DEBUG";
             return DEBUG;

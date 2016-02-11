@@ -30,7 +30,6 @@ namespace Luna_interpreter.Model
 
             GetExpression,
             Container,
-            Set,
             List,
             WhereClosure,
             OrderByClosure,
