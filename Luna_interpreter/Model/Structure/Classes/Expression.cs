@@ -16,6 +16,12 @@ namespace Luna_interpreter.Model.Structure.Classes
             _operators.Add("=");
             _operators.Add("==");
             _operators.Add("equals");
+            _operators.Add("like");
+            _operators.Add("not like");
+            _operators.Add("~");
+            _operators.Add("!~");
+            _operators.Add("regex"); // not implemented yet
+            _operators.Add("_");    // not implemented yet
             _operators.Add("<>");
             _operators.Add("!=");
             _operators.Add("not =");
@@ -106,7 +112,7 @@ namespace Luna_interpreter.Model.Structure.Classes
             {
                 if (operand1 is Int32)
                 {
-                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals") || operatorString.Equals("like") || operatorString.Equals("~"))
                     {
                         if (Int32.Parse(operand1.ToString()) == Int32.Parse(operand2.ToString()))
                         {
@@ -117,7 +123,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not =") || operatorString.Equals("not like") || operatorString.Equals("!~"))
                     {
                         if (Int32.Parse(operand1.ToString()) != Int32.Parse(operand2.ToString()))
                         {
@@ -128,7 +134,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<=") || operatorString.Equals("≤"))
+                    else if (operatorString.Equals("<="))
                     {
                         if (Int32.Parse(operand1.ToString()) <= Int32.Parse(operand2.ToString()))
                         {
@@ -139,7 +145,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals(">=") || operatorString.Equals("≥"))
+                    else if (operatorString.Equals(">="))
                     {
                         if (Int32.Parse(operand1.ToString()) > Int32.Parse(operand2.ToString()))
                         {
@@ -179,7 +185,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 }
                 else if (operand1 is float)
                 {
-                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals") || operatorString.Equals("like") || operatorString.Equals("~"))
                     {
                         if (float.Parse(operand1.ToString()) == float.Parse(operand2.ToString()))
                         {
@@ -190,7 +196,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not =") || operatorString.Equals("not like") || operatorString.Equals("!~"))
                     {
                         if (float.Parse(operand1.ToString()) != float.Parse(operand2.ToString()))
                         {
@@ -201,7 +207,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<=") || operatorString.Equals("≤"))
+                    else if (operatorString.Equals("<="))
                     {
                         if (float.Parse(operand1.ToString()) <= float.Parse(operand2.ToString()))
                         {
@@ -212,7 +218,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals(">=") || operatorString.Equals("≥"))
+                    else if (operatorString.Equals(">="))
                     {
                         if (float.Parse(operand1.ToString()) > float.Parse(operand2.ToString()))
                         {
@@ -258,7 +264,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                         return ERROR;
                     }
 
-                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals") || operatorString.Equals("like") || operatorString.Equals("~"))
                     {
                         if (operand1.ToString() == operand2.ToString())
                         {
@@ -269,7 +275,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not =") || operatorString.Equals("not like") || operatorString.Equals("!~"))
                     {
                         if (operand1.ToString() != operand2.ToString())
                         {
@@ -287,7 +293,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 }
                 else if (operand1 is bool)
                 {
-                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals") || operatorString.Equals("like") || operatorString.Equals("~"))
                     {
                         if (operand1 as bool? == operand2 as bool?)
                         {
@@ -298,7 +304,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not =") || operatorString.Equals("not like") || operatorString.Equals("!~"))
                     {
                         if (operand1 as bool? != operand2 as bool?)
                         {
@@ -316,7 +322,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 }
                 else if (operand1 is DateTime)
                 {
-                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals") || operatorString.Equals("like") || operatorString.Equals("~"))
                     {
                         if (operand1 as DateTime? == operand2 as DateTime?)
                         {
@@ -327,7 +333,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not =") || operatorString.Equals("not like") || operatorString.Equals("!~"))
                     {
                         if (operand1 as DateTime? != operand2 as DateTime?)
                         {
@@ -338,7 +344,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<=") || operatorString.Equals("≤"))
+                    else if (operatorString.Equals("<="))
                     {
                         if ((DateTime) operand1 <= (DateTime) operand2)
                         {
@@ -349,7 +355,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals(">=") || operatorString.Equals("≥"))
+                    else if (operatorString.Equals(">="))
                     {
                         if ((DateTime)operand1 >= (DateTime)operand2)
                         {
@@ -389,7 +395,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 }
                 else if (operand1 is TimeSpan)
                 {
-                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals"))
+                    if (operatorString.Equals("=") || operatorString.Equals("==") || operatorString.Equals("equals") || operatorString.Equals("like") || operatorString.Equals("~"))
                     {
                         if (operand1 as TimeSpan? == operand2 as TimeSpan?)
                         {
@@ -400,7 +406,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not ="))
+                    else if (operatorString.Equals("<>") || operatorString.Equals("!=") || operatorString.Equals("not =") || operatorString.Equals("not like") || operatorString.Equals("!~"))
                     {
                         if (operand1 as TimeSpan? != operand2 as TimeSpan?)
                         {
@@ -411,7 +417,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals("<=") || operatorString.Equals("≤"))
+                    else if (operatorString.Equals("<="))
                     {
                         if ((TimeSpan)operand1 <= (TimeSpan)operand2)
                         {
@@ -422,7 +428,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             return false;
                         }
                     }
-                    else if (operatorString.Equals(">=") || operatorString.Equals("≥"))
+                    else if (operatorString.Equals(">="))
                     {
                         if ((TimeSpan)operand1 >= (TimeSpan)operand2)
                         {
