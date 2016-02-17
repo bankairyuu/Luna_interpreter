@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GOLD;
+using System.Text.RegularExpressions;
 
 namespace Luna_interpreter.Model.Structure.Classes
 {
@@ -11,8 +12,17 @@ namespace Luna_interpreter.Model.Structure.Classes
     {
         public object Execute(Reduction node)
         {
-            string DEBUG = "DEBUG - OrderBy";
-            return DEBUG;
+            try
+            {
+                string returnValue = node[2].Data.ToString();
+                returnValue = Regex.Replace(returnValue, "\"", "");
+                Console.WriteLine(returnValue);
+                return returnValue;
+            }
+            catch(Exception exc)
+            {
+                return "";
+            }
         }
 
         public object Operation(object operand1, string operatorString, object operand2)

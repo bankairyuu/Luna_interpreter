@@ -9,9 +9,9 @@ namespace Luna_interpreter.Model.Structure.Classes
     {
         public object Execute(Reduction node)
         {
-            Console.WriteLine(node.Count());
-
             List<string> container = null;
+            string whereClosure = null;
+            string orderByClosure = null;
 
 
             for (int i = 2; i < node.Count(); i++)
@@ -21,20 +21,51 @@ namespace Luna_interpreter.Model.Structure.Classes
 
                 if (container == null)
                 {
+                    // egyelőre használaton kívül van, valamint ezt lehet, hogy projekt specifikusan át kell írni nyelvtan szinten is
                     container = (List<string>) Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data);
                 }
-
-                object retVal = Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data);
-                Console.WriteLine(retVal);
+                else if (whereClosure == null)
+                {
+                    whereClosure = Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data).ToString();
+                }
+                else if (orderByClosure == null)
+                {
+                    orderByClosure = Context.NonTerminalContext.Execute(ntt, (Reduction)node[i].Data).ToString();
+                }
             }
+
+            var retVal = Operation(whereClosure, orderByClosure, null);
 
             string DEBUG = "DEBUG";
             return DEBUG;
         }
 
-        public object Operation(object operand1, string operatorString, object operand2)
+        public object Operation(object whereCl, string orderByCl, object operand2)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // service hívás
+                var client = new WoLaService.WoLaServiceClient();
+                client.ClientCredentials.UserName.UserName = "test";
+                client.ClientCredentials.UserName.Password = "test";
+
+                var retVal = client.GetWorkforceByWhereClauseAndSorting(whereCl.ToString(), orderByCl == "" ? null : orderByCl);
+
+                Console.WriteLine(retVal[0].Name);
+
+                return retVal;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("EXCEPTION -> " + exc.Message);
+                string ERROR = "ERROR";
+                return ERROR;
+            }
+
+
+
+            string DEBUG = "DEBUG";
+            return DEBUG;
         }
     }
 }

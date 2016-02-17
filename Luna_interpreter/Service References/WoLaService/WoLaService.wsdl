@@ -32,6 +32,8 @@
       <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.WoLa" />
       <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FlowService.WoLa.Fields" />
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" />
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.Services" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWoLaService_GetFieldById_InputMessage">
@@ -88,6 +90,12 @@
   <wsdl:message name="IWoLaService_GetFieldValueByProccessInstace_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFieldValueByProccessInstaceResponse" />
   </wsdl:message>
+  <wsdl:message name="IWoLaService_GetWorkforceByWhereClauseAndSorting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkforceByWhereClauseAndSorting" />
+  </wsdl:message>
+  <wsdl:message name="IWoLaService_GetWorkforceByWhereClauseAndSorting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkforceByWhereClauseAndSortingResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWoLaService">
     <wsdl:operation name="GetFieldById">
       <wsdl:input wsam:Action="http://wfe.mik.uni-pannon.hu/IWoLaService/GetFieldById" message="tns:IWoLaService_GetFieldById_InputMessage" />
@@ -122,6 +130,10 @@
     <wsdl:operation name="GetFieldValueByProccessInstace">
       <wsdl:input wsam:Action="http://wfe.mik.uni-pannon.hu/IWoLaService/GetFieldValueByProccessInstace" message="tns:IWoLaService_GetFieldValueByProccessInstace_InputMessage" />
       <wsdl:output wsam:Action="http://wfe.mik.uni-pannon.hu/IWoLaService/GetFieldValueByProccessInstaceResponse" message="tns:IWoLaService_GetFieldValueByProccessInstace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkforceByWhereClauseAndSorting">
+      <wsdl:input wsam:Action="http://wfe.mik.uni-pannon.hu/IWoLaService/GetWorkforceByWhereClauseAndSorting" message="tns:IWoLaService_GetWorkforceByWhereClauseAndSorting_InputMessage" />
+      <wsdl:output wsam:Action="http://wfe.mik.uni-pannon.hu/IWoLaService/GetWorkforceByWhereClauseAndSortingResponse" message="tns:IWoLaService_GetWorkforceByWhereClauseAndSorting_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWoLaService" type="tns:IWoLaService">
@@ -198,6 +210,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetFieldValueByProccessInstace">
       <soap:operation soapAction="http://wfe.mik.uni-pannon.hu/IWoLaService/GetFieldValueByProccessInstace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkforceByWhereClauseAndSorting">
+      <soap:operation soapAction="http://wfe.mik.uni-pannon.hu/IWoLaService/GetWorkforceByWhereClauseAndSorting" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -22,7 +22,9 @@
     <MetadataSource Address="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="0684e82d-d3b6-427c-b39a-9cda76737e6f" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd4" />
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="924d6e5d-c378-4efd-ba13-2bb08c8d9afc" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd1" />
+    <MetadataFile FileName="item41.xsd" MetadataType="Schema" ID="14ae1f32-607d-4896-b28f-5428febab848" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd5" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="efa67dad-0aa3-4e85-95ce-c6da1b90fee6" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd3" />
     <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="05ff4bbb-dbc1-4bdc-8fee-e0948a93dce5" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd2" />
     <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="973774be-a255-4706-88f1-0f2abfeff0a2" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd0" />

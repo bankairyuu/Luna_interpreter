@@ -583,6 +583,361 @@ namespace Luna_interpreter.WoLaService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Workforce", Namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resourc" +
+        "es")]
+    [System.SerializableAttribute()]
+    public partial class Workforce : Luna_interpreter.WoLaService.Resource {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Luna_interpreter.WoLaService.Credential CredentialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Luna_interpreter.WoLaService.Credential Credential {
+            get {
+                return this.CredentialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CredentialField, value) != true)) {
+                    this.CredentialField = value;
+                    this.RaisePropertyChanged("Credential");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Resource", Namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resourc" +
+        "es")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Luna_interpreter.WoLaService.Equipment))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Luna_interpreter.WoLaService.Service))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Luna_interpreter.WoLaService.Workforce))]
+    public partial class Resource : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Equipment", Namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resourc" +
+        "es")]
+    [System.SerializableAttribute()]
+    public partial class Equipment : Luna_interpreter.WoLaService.Resource {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Service", Namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resourc" +
+        "es.Services")]
+    [System.SerializableAttribute()]
+    public partial class Service : Luna_interpreter.WoLaService.Resource {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Luna_interpreter.WoLaService.ProviderCompany CompanyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Luna_interpreter.WoLaService.ServiceType ServiceTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Luna_interpreter.WoLaService.ProviderCompany Company {
+            get {
+                return this.CompanyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
+                    this.CompanyField = value;
+                    this.RaisePropertyChanged("Company");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Luna_interpreter.WoLaService.ServiceType ServiceType {
+            get {
+                return this.ServiceTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ServiceTypeField, value) != true)) {
+                    this.ServiceTypeField = value;
+                    this.RaisePropertyChanged("ServiceType");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Credential", Namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resourc" +
+        "es")]
+    [System.SerializableAttribute()]
+    public partial class Credential : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HashedPasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HashedPassword {
+            get {
+                return this.HashedPasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HashedPasswordField, value) != true)) {
+                    this.HashedPasswordField = value;
+                    this.RaisePropertyChanged("HashedPassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProviderCompany", Namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resourc" +
+        "es.Services")]
+    [System.SerializableAttribute()]
+    public partial class ProviderCompany : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceType", Namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resourc" +
+        "es.Services")]
+    [System.SerializableAttribute()]
+    public partial class ServiceType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://wfe.mik.uni-pannon.hu/", ConfigurationName="WoLaService.IWoLaService")]
     public interface IWoLaService {
@@ -636,6 +991,14 @@ namespace Luna_interpreter.WoLaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://wfe.mik.uni-pannon.hu/IWoLaService/GetFieldValueByProccessInstace", ReplyAction="http://wfe.mik.uni-pannon.hu/IWoLaService/GetFieldValueByProccessInstaceResponse")]
         System.Threading.Tasks.Task<string> GetFieldValueByProccessInstaceAsync(int processInstanceId, string documentName, string sectionName, string fieldName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://wfe.mik.uni-pannon.hu/IWoLaService/GetWorkforceByWhereClauseAndSorting", ReplyAction="http://wfe.mik.uni-pannon.hu/IWoLaService/GetWorkforceByWhereClauseAndSortingResp" +
+            "onse")]
+        Luna_interpreter.WoLaService.Workforce[] GetWorkforceByWhereClauseAndSorting(string whereCaluse, string sort);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://wfe.mik.uni-pannon.hu/IWoLaService/GetWorkforceByWhereClauseAndSorting", ReplyAction="http://wfe.mik.uni-pannon.hu/IWoLaService/GetWorkforceByWhereClauseAndSortingResp" +
+            "onse")]
+        System.Threading.Tasks.Task<Luna_interpreter.WoLaService.Workforce[]> GetWorkforceByWhereClauseAndSortingAsync(string whereCaluse, string sort);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -727,6 +1090,14 @@ namespace Luna_interpreter.WoLaService {
         
         public System.Threading.Tasks.Task<string> GetFieldValueByProccessInstaceAsync(int processInstanceId, string documentName, string sectionName, string fieldName) {
             return base.Channel.GetFieldValueByProccessInstaceAsync(processInstanceId, documentName, sectionName, fieldName);
+        }
+        
+        public Luna_interpreter.WoLaService.Workforce[] GetWorkforceByWhereClauseAndSorting(string whereCaluse, string sort) {
+            return base.Channel.GetWorkforceByWhereClauseAndSorting(whereCaluse, sort);
+        }
+        
+        public System.Threading.Tasks.Task<Luna_interpreter.WoLaService.Workforce[]> GetWorkforceByWhereClauseAndSortingAsync(string whereCaluse, string sort) {
+            return base.Channel.GetWorkforceByWhereClauseAndSortingAsync(whereCaluse, sort);
         }
     }
 }

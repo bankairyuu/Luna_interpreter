@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://wfe.mik.uni-pannon.hu/" elementFormDefault="qualified" targetNamespace="http://wfe.mik.uni-pannon.hu/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.WoLa" />
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" />
   <xs:element name="GetFieldById">
     <xs:complexType>
       <xs:sequence>
@@ -124,6 +125,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GetFieldValueByProccessInstaceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceByWhereClauseAndSorting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="whereCaluse" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sort" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkforceByWhereClauseAndSortingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="GetWorkforceByWhereClauseAndSortingResult" nillable="true" type="q2:ArrayOfWorkforce" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
