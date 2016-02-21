@@ -1,20 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace Luna_interpreter.GOLD_Engine
 {
-
+    /// <summary>
+    /// A MyParserClass a GOLD Engine és GOLD Parser használatával szintaktikailag elemzi a bemenetként kapott szöveget, majd ha azt elfogadja,
+    /// létrehozza belőle későbbi felhasználásra a lebontási fát
+    /// </summary>
     class MyParserClass
     {
+        /// <summary>
+        /// A parszolás műveletét végző objektum
+        /// </summary>
+        /// <seealso cref="GOLD.Parser"/>
         private GOLD.Parser parser = new GOLD.Parser();
 
+        /// <summary>
+        /// A lebontási fa teteje, vagyis a gyökérelem
+        /// </summary>
+        /// <seealso cref="GOLD.Reduction"/>
         public GOLD.Reduction Root;     //Store the top of the tree
+
+        /// <summary>
+        /// Hibaüzenet
+        /// </summary>
         public string FailMessage;
 
+        /// <summary>
+        /// A Setup függvény a nyelvtanfájl megnyitásáért felelős.
+        /// </summary>
+        /// <returns>Logikai igaz, ha sikeres a nyelvtanfájl megnyitása, ellenkező esetben logikai hamis.</returns>
         public bool Setup()
         {
             try
@@ -28,6 +44,12 @@ namespace Luna_interpreter.GOLD_Engine
             }
         }
 
+        /// <summary>
+        /// Publikus függvény, mely alapvetően egy lebontási fához vezető rekurziót indít el, valamint ennek kiértékelése után a fa bejárásáért felelős
+        /// logikai motorban lévő főosztálynak a gyökérelemmel átadja a lebontási fát
+        /// </summary>
+        /// <param name="instructions">A bemeneti string, melyet a megadott nyelvtan segítségével vagy elfogad a rendszer, vagy nem</param>
+        /// <returns>A lebontási fa szövegszerű reprezentációja, jól tagolt formában</returns>
         public string Parsing(string instructions)
         {
             if (Parse(new StringReader(instructions)))
@@ -43,6 +65,11 @@ namespace Luna_interpreter.GOLD_Engine
             }
         }
 
+        /// <summary>
+        /// A parszolási fa generálását elindító rekurziós fej
+        /// </summary>
+        /// <param name="Root">A lebontási fa gyökéreleme</param>
+        /// <returns>a lebontási fa tagoltan, szöveg formátumban</returns>
         private string DrawReductionTree(GOLD.Reduction Root)
         {
             //This procedure starts the recursion that draws the parse tree.
@@ -54,6 +81,15 @@ namespace Luna_interpreter.GOLD_Engine
             return tree.ToString();
         }
 
+        /// <summary>
+        /// A lebontási fa egyes leveleihez tartozó értékek adott szintnek megfelelő szöveges reprezentációját végzi tagolási eljárásokkal egybekötve
+        /// </summary>
+        /// <param name="tree">A visszatérési szöveget tároló StringBuilder objektum</param>
+        /// <param name="reduction">Egy adott levelet reprezentáló GOLD.Reduction típus</param>
+        /// <param name="indent">Az adott mélység számban kifejezve</param>
+        /// <remarks>
+        /// A függvény csupán a szöveges formátumú lebontási fa reprezentációját hivatott létrehozni
+        /// </remarks>
         private void DrawReduction(StringBuilder tree, GOLD.Reduction reduction, int indent)
         {
             //This is a simple recursive procedure that draws an ASCII version of the parse
@@ -87,16 +123,22 @@ namespace Luna_interpreter.GOLD_Engine
             }
         }
 
+        /// <summary>
+        /// A parszolás megtódusát ténylegesen elvégző eljárás
+        /// 
+        /// This procedure starts the GOLD Parser Engine and handles each of the
+        /// messages it returns.
+        /// Each time a reduction is made, you can create new
+        /// custom object and reassign the .CurrentReduction property. Otherwise, 
+        /// the system will use the Reduction object that was returned.
+        ///
+        /// The resulting tree will be a pure representation of the language 
+        /// and will be ready to implement.
+        /// </summary>
+        /// <param name="reader">A bemeneti string, egy TextReader objektumba csomagolva</param>
+        /// <returns>Logikai igaz, ha a bemenet szintaktikailag elfogadható</returns>
         public bool Parse(TextReader reader)
         {
-            //This procedure starts the GOLD Parser Engine and handles each of the
-            //messages it returns. Each time a reduction is made, you can create new
-            //custom object and reassign the .CurrentReduction property. Otherwise, 
-            //the system will use the Reduction object that was returned.
-            //
-            //The resulting tree will be a pure representation of the language 
-            //and will be ready to implement.
-
             GOLD.ParseMessage response;
             bool done;                      //Controls when we leave the loop
             bool accepted = false;          //Was the parse successful?

@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace Luna_interpreter.Model.Structure.Context
 {
+    /// <summary>
+    /// A Strategy Pattern (Stratégiai tervezési minta) magja.
+    /// Az osztály példányosítja a megfelelő szótár változót, mely egy megadott interfésszel és enum típussal definiálható osztályokból álló lista, ahol a kulcs az enum típusa
+    /// </summary>
+    /// <seealso cref="Luna_interpreter.Model.Enums.eNonTerminals"/>
+    /// <seealso cref="Luna_interpreter.Model.Structure.Interfaces.INonTerminals"/>
+    /// <remarks>
+    /// Az objektum célja, hogy minden irányított függvényhívást egybegyűjtsön és vezéreljen a lebontás során (Az Execute függvényeket)
+    /// </remarks>
     static public class NonTerminalContext
     {
         private static Dictionary<Enums.eNonTerminals, Interfaces.INonTerminals> _strategies = new Dictionary<Enums.eNonTerminals, Interfaces.INonTerminals>();
@@ -33,6 +42,12 @@ namespace Luna_interpreter.Model.Structure.Context
             _strategies.Add(Enums.eNonTerminals.Statement,          new Classes.Statement());
         }
 
+        /// <summary>
+        /// A megfelelő nemterminálishoz tartozó lefutási függvény hívását vezérlő eljárás
+        /// </summary>
+        /// <param name="type">Az eljárást végző nemterminális</param>
+        /// <param name="node">Adott levél a parszolási fában</param>
+        /// <returns>Az adott nemterminális által, az adott levélhez kiértékelt objektum</returns>
         public static object Execute (Enums.eNonTerminals type, GOLD.Reduction node)
         {
             return _strategies[type].Execute(node);
