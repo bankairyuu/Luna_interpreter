@@ -41,7 +41,7 @@ namespace Luna_interpreter.Model
             /// ProgramLine ::= Expression
             ///                 | CommentItem
             ///                 | Statement
-            ///                 |
+            ///                 | 
             /// </remarks>
             ProgramLine,
 

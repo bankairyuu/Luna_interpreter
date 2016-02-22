@@ -13,10 +13,13 @@ namespace Luna_interpreter.Model.Structure.Context
     /// <seealso cref="Luna_interpreter.Model.Enums.eNonTerminals"/>
     /// <seealso cref="Luna_interpreter.Model.Structure.Interfaces.INonTerminals"/>
     /// <remarks>
-    /// Az objektum célja, hogy minden irányított függvényhívást egybegyűjtsön és vezéreljen a lebontás során (Az Execute függvényeket)
+    /// Az objektum célja, hogy minden irányított függvényhívást egybegyűjtsön és vezéreljen a lebontás során (Az Execute függvények hívását vezérli a rekurzióban)
     /// </remarks>
     static public class NonTerminalContext
     {
+        /// <summary>
+        /// Az egyes nemterminális típusoknak megfeleltetett objektumok tárolására létrehozott stratégia szótár
+        /// </summary>
         private static Dictionary<Enums.eNonTerminals, Interfaces.INonTerminals> _strategies = new Dictionary<Enums.eNonTerminals, Interfaces.INonTerminals>();
 
         static NonTerminalContext()
