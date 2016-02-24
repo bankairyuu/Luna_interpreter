@@ -1,0 +1,36 @@
+﻿<Window x:Class="TestWoLaDLL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWoLaDLL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <!--0-->
+            <RowDefinition Height="7*"/>
+            <!--1-->
+            <RowDefinition Height="1*"/>
+            <!--2-->
+            <RowDefinition Height="1*"/>
+            <!--3-->
+            <RowDefinition Height="1*"/>
+            <!--4-->
+            <RowDefinition Height="1*"/>
+            <!--5-->
+            <RowDefinition Height="1*"/>
+            <!--6-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Name="InputBox" Grid.Row="1" Grid.Column="1" Focusable="True"/>
+        <Button Name="Parsing" Content="Parse" Grid.Row="3" Grid.Column="1" Click="Parsing_Click"/>
+        <Label Name="output" Grid.Column="1" Grid.Row="5"/>
+    </Grid>
+</Window>
