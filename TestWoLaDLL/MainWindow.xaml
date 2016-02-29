@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWoLaDLL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Test window" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="10"/>
             <!--0-->
             <RowDefinition Height="7*"/>
             <!--1-->
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="10"/>
             <!--2-->
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="30"/>
             <!--3-->
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="10"/>
             <!--4-->
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="40"/>
             <!--5-->
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="10"/>
             <!--6-->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -30,7 +30,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBox Name="InputBox" Grid.Row="1" Grid.Column="1" Focusable="True" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
-        <Button Name="Parsing" Content="Parse" Grid.Row="3" Grid.Column="1" Click="Parsing_Click" Width="150" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Name="output" Grid.Column="1" Grid.Row="5"/>
+        <Button Name="Parsing" Content="Feldolgozás" Grid.Row="3" Grid.Column="1" Click="Parsing_Click" Width="150" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Name="output" Grid.Column="1" Grid.Row="5" Content="Végeredmény" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Window>

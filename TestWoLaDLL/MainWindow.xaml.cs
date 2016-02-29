@@ -20,11 +20,20 @@ namespace TestWoLaDLL
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Initializes the Main Window
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
         
+        /// <summary>
+        /// Click event for Parsing (Content name: Feldolgozás)
+        /// Start a parsing method with the WoLaDLL
+        /// </summary>
+        /// <param name="sender">sender object</param>
+        /// <param name="e">routed event</param>
         private void Parsing_Click(object sender, RoutedEventArgs e)
         {
             string instructions = InputBox.Text;
