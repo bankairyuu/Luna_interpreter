@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5d933195-847b-4bbe-89c2-e314fe0c004a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f541bd99-9bd5-47c0-9950-8812b09fc601" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,14 +22,14 @@
     <MetadataSource Address="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="ed81515b-2971-4c62-9e63-c1b683459ec1" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd4" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="2805a7b4-fe46-4c11-a922-7ba22b54c1e8" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd1" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="a86d2b99-79b8-4765-a6bf-6ebe88a53ef6" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd5" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="940760ea-6eab-4f7a-93f8-b16b27ed2697" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd3" />
-    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="80dae54c-9f28-4be7-a0a1-e17e63d9f19d" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd2" />
-    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="ea689245-2727-4f17-b971-7c5158808090" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd0" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="f82100d5-6d94-4f99-bfc9-44ab1b78eff8" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?disco" />
-    <MetadataFile FileName="WoLaService.wsdl" MetadataType="Wsdl" ID="4b250e14-04b5-4d52-af8d-d0d1ae649c95" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="b2edcf83-2ef8-4890-91a4-cf44362a65ad" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd4" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="ee822a59-8150-416e-8382-82dc6b3a542e" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="857d852e-788f-4816-a12e-e06eaa6d5634" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd5" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="5db4cfa7-34b4-4789-a2de-1ee2b3c048a9" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd3" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="36467d27-1811-4344-87fd-de81ce49073d" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd2" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="07043fb9-c0ba-4a55-8e1a-7519df403fbd" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="d6ae773c-c345-4f98-8207-fe864ceb25c9" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?disco" />
+    <MetadataFile FileName="WoLaService.wsdl" MetadataType="Wsdl" ID="593655a9-71c6-4450-87cb-0661b1392370" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

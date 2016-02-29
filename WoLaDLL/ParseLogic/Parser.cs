@@ -39,7 +39,7 @@ namespace WoLaDLL.ParseLogic
         {
             try
             {
-                return parser.LoadTables(Environment.CurrentDirectory + @"/../../../WoLaDLL/ParseLogic/lang0.53.egt");
+                return parser.LoadTables(Environment.CurrentDirectory + @"/../../../WoLaDLL/ParseLogic/lang0.54.egt");
             }
             catch (Exception exc)
             {
@@ -119,7 +119,7 @@ namespace WoLaDLL.ParseLogic
 
                     default:
                         string leaf = (string)reduction[n].Data;
-                        tree.AppendLine("Terminal\t" + indentText + " + -" + leaf);
+                        tree.AppendLine("Terminal\t\t" + indentText + " + -" + leaf);
                         break;
                 }
             }

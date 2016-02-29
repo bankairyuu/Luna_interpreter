@@ -40,6 +40,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,6 +63,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Service References\WoLaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,14 +99,56 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\WoLaDLL.WoLaService.Field.datasource" />
+    <None Include="Properties\DataSources\WoLaDLL.WoLaService.Workforce.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\WoLaService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WoLaService\WoLaService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WoLaService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WoLaService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WoLaService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WoLaService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WoLaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

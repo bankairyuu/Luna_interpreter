@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4d7655b9-7c72-4b29-9ee5-997cae7b04f3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="17ba5a27-6f08-4caa-9d44-9f8d3e06b0e5" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd4" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="b91f0681-befc-4f36-b430-b0fd41cea544" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="70b77371-7a95-4cee-9a21-fa1dca5e6c9b" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd5" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="06269e73-0445-4d29-9490-96f82418272a" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd3" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="22c1c0a2-7cbd-4a19-bf30-873e24811532" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd2" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="d1d73737-529b-4fde-9db6-ce77e23b7d74" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="d22e3330-5782-451e-8a30-f23aef7297f3" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?disco" />
+    <MetadataFile FileName="WoLaService.wsdl" MetadataType="Wsdl" ID="cd02111c-1dfe-4aef-8a4a-27a228306530" SourceId="1" SourceUrl="https://wfe.mik.uni-pannon.hu:8735/FlowService/WoLaService/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

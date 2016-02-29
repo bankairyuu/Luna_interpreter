@@ -77,9 +77,8 @@ namespace Luna_interpreter.ServiceHandler
             {
                 Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
                 Console.WriteLine("x " + exc.Message);
-                Console.WriteLine("x A hivatkozott érték nem létezik");
                 Console.WriteLine("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-                string ERROR = "ERROR";
+                string ERROR = "ERROR : " + exc.Message;
                 return ERROR;
             }
         }

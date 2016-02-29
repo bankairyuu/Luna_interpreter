@@ -16,7 +16,7 @@ namespace Luna_interpreter.Model.Structure.Classes
             string DEBUG = "DEBUG - Container";
             List<string> _operand = null;
 
-            // lehet List, Set vagy ID
+            // lehet List vagy ID
             switch (node[0].Type())
             {
                 case SymbolType.Nonterminal: // Nemterminálisok vizsgálata
