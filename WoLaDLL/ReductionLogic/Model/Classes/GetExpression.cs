@@ -78,6 +78,19 @@ namespace Luna_interpreter.Model.Structure.Classes
                 client.ClientCredentials.UserName.UserName = "test";
                 client.ClientCredentials.UserName.Password = "test";
 
+                if (container.Contains("processes") || container.Contains("Processes"))
+                {
+                    var mcl = new WoLaDLL.ManagerService.ManagerServiceClient();
+                    var processes = mcl.ListProcesses();
+
+                    List<string> lst = new List<string>();
+                    foreach(object o in processes)
+                    {
+                        lst.Add(o.ToString());
+                    }
+                    return lst;
+                }
+
                 List<string> retVal = new List<string>();
                 retVal.Add("asdf");
                 retVal.Add("www");

@@ -66,6 +66,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                             if (ntt == Enums.eNonTerminals.GetExpression)
                             {
                                 List<string> retVal = (List<string>) Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[i].Data);
+                                return retVal;
                             }
 
                             if (_operand1 == null)
