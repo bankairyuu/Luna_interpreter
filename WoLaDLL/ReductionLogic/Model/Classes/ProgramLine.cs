@@ -18,7 +18,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 switch (ntt)
                 {
                     case Enums.eNonTerminals.Expression:
-                        object returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
+                        var returnValue = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[0].Data);
                         Console.WriteLine("################################################################");
                         Console.WriteLine("# Programline value: " + returnValue + "\ttype: " + returnValue.GetType());
                         Console.WriteLine("################################################################" + Environment.NewLine);

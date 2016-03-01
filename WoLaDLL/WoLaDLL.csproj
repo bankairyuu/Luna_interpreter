@@ -69,6 +69,11 @@
     <Compile Include="ReductionLogic\Model\Context\NonTerminalContext.cs" />
     <Compile Include="ReductionLogic\Model\Interfaces\INonTerminals.cs" />
     <Compile Include="ReductionLogic\Reduction.cs" />
+    <Compile Include="Service References\ManagerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WoLaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ManagerService\" />
     <WCFMetadataStorage Include="Service References\WoLaService\" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +92,175 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\ManagerService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\item9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService.wsdl" />
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Absence.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.AbsenceType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.CompanyContact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Component.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.ComponentCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.DateInterval.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.DateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.DynamicEquipmentGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.DynamicWorkforceGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Equipment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.EquipmentGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Hierarchy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.HierarchyTree.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.LoginData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Material.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.MaterialCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Menu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.MenuGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.MenuItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.MenuProfile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Permission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Prediction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Process.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.PropertyType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.PropertyValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.ProviderCompany.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Reservation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Role.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Schedule.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Service.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.ServiceType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.ShiftTemplate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Skill.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.SkillGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.UserProfile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.UserTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Visible.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.VisibleGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.VisibleItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.Workforce.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.WorkforceGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.WorkPlace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.WorkTime.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\WoLaDLL.ManagerService.WorkTimeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\WoLaService\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -123,6 +298,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\WoLaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManagerService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManagerService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManagerService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ManagerService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

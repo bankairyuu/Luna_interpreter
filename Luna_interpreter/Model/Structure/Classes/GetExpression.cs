@@ -61,11 +61,6 @@ namespace Luna_interpreter.Model.Structure.Classes
                 string ERROR = "ERROR";
                 return ERROR;
             }
-
-
-
-            string DEBUG = "DEBUG";
-            return DEBUG;
         }
     }
 }

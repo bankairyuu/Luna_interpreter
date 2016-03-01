@@ -14,37 +14,42 @@ namespace Luna_interpreter.Model.Structure.Classes
         public object Execute(GOLD.Reduction node)
         {
             List<string> _operand = null;
+            try { 
+                // lehet List vagy ID
+                switch (node[2].Type())
+                {
+                    case SymbolType.Nonterminal: // Nemterminálisok vizsgálata
 
-            // lehet List vagy ID
-            switch (node[2].Type())
-            {
-                case SymbolType.Nonterminal: // Nemterminálisok vizsgálata
+                        string type = Regex.Replace(node[2].Parent.ToString(), "[^0-9a-zA-Z]+", "");
+                        Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
 
-                    string type = Regex.Replace(node[2].Parent.ToString(), "[^0-9a-zA-Z]+", "");
-                    Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
+                        _operand = (List<string>)Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[2].Data);
 
-                    _operand = (List<string>)Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[2].Data);
+                        return _operand;
 
-                    return _operand;
+                    case SymbolType.Error:
+                        break;
 
-                case SymbolType.Error:
-                    break;
-
-                default:
-                    // Terminálisok vizsgálata - itt egy StringLiteral vagy null
-                    try
-                    {
-                        List<string> retVal = new List<string>();
-                        string returnValue = node[2].Data.ToString();
-                        returnValue = Regex.Replace(returnValue, "\"", "");
-                        retVal.Add(returnValue);
-                        return retVal;
-                    }
-                    catch (Exception)
-                    {
-                        return null;
-                    }
+                    default:
+                        // Terminálisok vizsgálata - itt egy StringLiteral vagy null
+                        try
+                        {
+                            List<string> retVal = new List<string>();
+                            string returnValue = node[2].Data.ToString();
+                            returnValue = Regex.Replace(returnValue, "\"", "");
+                            retVal.Add(returnValue);
+                            return retVal;
+                        }
+                        catch (Exception)
+                        {
+                            return null;
+                        }
                     
+                }
+            }
+            catch (Exception)   //nics order by feltétel megadva
+            {
+                return null;
             }
             return null;
         }

@@ -16,9 +16,6 @@ namespace Luna_interpreter.Model.Structure.Classes
             returnValue = Regex.Replace(returnValue, "\"", "");
             Console.WriteLine(returnValue);
             return returnValue;
-
-            string DEBUG = "DEBUG - WhereClosure";
-            return DEBUG;
         }
 
         public object Operation(object operand1, string operatorString, object operand2)

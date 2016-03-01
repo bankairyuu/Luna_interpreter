@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Workforce">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Resource">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Credential" nillable="true" type="tns:Credential" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Workforce" nillable="true" type="tns:Workforce" />
+  <xs:complexType name="Resource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Resource" nillable="true" type="tns:Resource" />
+  <xs:complexType name="Equipment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Resource">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Equipment" nillable="true" type="tns:Equipment" />
+  <xs:complexType name="Credential">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HashedPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Credential" nillable="true" type="tns:Credential" />
+  <xs:complexType name="ArrayOfWorkforce">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Workforce" nillable="true" type="tns:Workforce" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkforce" nillable="true" type="tns:ArrayOfWorkforce" />
+  <xs:complexType name="Skill">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Skill" nillable="true" type="tns:Skill" />
+  <xs:complexType name="ArrayOfSkill">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Skill" nillable="true" type="tns:Skill" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSkill" nillable="true" type="tns:ArrayOfSkill" />
+  <xs:complexType name="WorkPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkPlace" nillable="true" type="tns:WorkPlace" />
+  <xs:complexType name="DynamicWorkforceGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkforceGroup">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Expression" nillable="true" type="tns:Expression" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DynamicWorkforceGroup" nillable="true" type="tns:DynamicWorkforceGroup" />
+  <xs:complexType name="WorkforceGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkforceGroup" nillable="true" type="tns:WorkforceGroup" />
+  <xs:complexType name="Expression">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Expression" nillable="true" type="tns:Expression" />
+  <xs:complexType name="PredefinedWorkforceGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkforceGroup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PredefinedWorkforceGroup" nillable="true" type="tns:PredefinedWorkforceGroup" />
+  <xs:complexType name="ArrayOfWorkforceGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkforceGroup" nillable="true" type="tns:WorkforceGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkforceGroup" nillable="true" type="tns:ArrayOfWorkforceGroup" />
+  <xs:complexType name="ArrayOfWorkPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkPlace" nillable="true" type="tns:WorkPlace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkPlace" nillable="true" type="tns:ArrayOfWorkPlace" />
+  <xs:complexType name="Role">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="ArrayOfRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole" />
+  <xs:complexType name="Permission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Permission" nillable="true" type="tns:Permission" />
+  <xs:complexType name="ArrayOfPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Permission" nillable="true" type="tns:Permission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPermission" nillable="true" type="tns:ArrayOfPermission" />
+  <xs:complexType name="SkillGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SkillGroup" nillable="true" type="tns:SkillGroup" />
+  <xs:complexType name="ArrayOfSkillGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SkillGroup" nillable="true" type="tns:SkillGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSkillGroup" nillable="true" type="tns:ArrayOfSkillGroup" />
+  <xs:complexType name="ArrayOfHierarchy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hierarchy" nillable="true" type="tns:Hierarchy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHierarchy" nillable="true" type="tns:ArrayOfHierarchy" />
+  <xs:complexType name="Hierarchy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hierarchy" nillable="true" type="tns:Hierarchy" />
+  <xs:complexType name="HierarchyTree">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartElement" nillable="true" type="tns:Hierarchy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HierarchyTree" nillable="true" type="tns:HierarchyTree" />
+  <xs:complexType name="ArrayOfHierarchyTree">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HierarchyTree" nillable="true" type="tns:HierarchyTree" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHierarchyTree" nillable="true" type="tns:ArrayOfHierarchyTree" />
+  <xs:complexType name="ResourceUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceUnit" nillable="true" type="tns:ResourceUnit" />
+  <xs:complexType name="ArrayOfEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Equipment" nillable="true" type="tns:Equipment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEquipment" nillable="true" type="tns:ArrayOfEquipment" />
+  <xs:complexType name="PredefinedEquipmentGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EquipmentGroup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PredefinedEquipmentGroup" nillable="true" type="tns:PredefinedEquipmentGroup" />
+  <xs:complexType name="EquipmentGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentGroup" nillable="true" type="tns:EquipmentGroup" />
+  <xs:complexType name="DynamicEquipmentGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EquipmentGroup">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Expression" nillable="true" type="tns:Expression" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DynamicEquipmentGroup" nillable="true" type="tns:DynamicEquipmentGroup" />
+  <xs:complexType name="ArrayOfEquipmentGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EquipmentGroup" nillable="true" type="tns:EquipmentGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEquipmentGroup" nillable="true" type="tns:ArrayOfEquipmentGroup" />
+</xs:schema>

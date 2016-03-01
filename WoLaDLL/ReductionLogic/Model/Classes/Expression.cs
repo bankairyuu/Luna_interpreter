@@ -63,6 +63,11 @@ namespace Luna_interpreter.Model.Structure.Classes
                             string type = Regex.Replace(node[i].Parent.ToString(), "[^0-9a-zA-Z]+", "");
                             Enums.eNonTerminals ntt = (Enums.eNonTerminals)Enum.Parse(typeof(Enums.eNonTerminals), type);
 
+                            if (ntt == Enums.eNonTerminals.GetExpression)
+                            {
+                                List<string> retVal = (List<string>) Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[i].Data);
+                            }
+
                             if (_operand1 == null)
                             {
                                 _operand1 = Context.NonTerminalContext.Execute(ntt, (GOLD.Reduction)node[i].Data);

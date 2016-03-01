@@ -14,7 +14,7 @@ namespace Luna_interpreter.Model.Structure.Classes
         {
             string DEBUG = "DEBUG - Items";
             object _item = null, _operator = null;
-            object _items = null;   /// TODO: Meg kell oldani a lista kezelését, egyelőre még a lista is egy item jellegű objektum (akár listaelemek konkatenációjából álló string)
+            object _items = null;
 
             if (node.Count() == 3)
             {// <Item> ',' <Items>

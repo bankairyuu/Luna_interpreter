@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources.PropertyTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/ManagerService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" />
+  <xs:complexType name="BooleanProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BooleanProperty" nillable="true" type="tns:BooleanProperty" />
+  <xs:complexType name="PropertyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyType" nillable="true" type="tns:PropertyType" />
+  <xs:complexType name="DoubleProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DoubleProperty" nillable="true" type="tns:DoubleProperty" />
+  <xs:complexType name="IntegerProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IntegerProperty" nillable="true" type="tns:IntegerProperty" />
+  <xs:complexType name="PredefinedListProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ListItems" nillable="true" type="tns:ArrayOfPredefinedListItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PredefinedListProperty" nillable="true" type="tns:PredefinedListProperty" />
+  <xs:complexType name="ArrayOfPredefinedListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PredefinedListItem" nillable="true" type="tns:PredefinedListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPredefinedListItem" nillable="true" type="tns:ArrayOfPredefinedListItem" />
+  <xs:complexType name="PredefinedListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PredefinedListItem" nillable="true" type="tns:PredefinedListItem" />
+  <xs:complexType name="StringProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StringProperty" nillable="true" type="tns:StringProperty" />
+  <xs:complexType name="UnitProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyType">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FlowService.Manager.DataContracts.Resources" minOccurs="0" name="DefaultUnit" nillable="true" type="q1:ResourceUnit" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnitProperty" nillable="true" type="tns:UnitProperty" />
+  <xs:complexType name="ArrayOfPropertyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyType" nillable="true" type="tns:PropertyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyType" nillable="true" type="tns:ArrayOfPropertyType" />
+</xs:schema>

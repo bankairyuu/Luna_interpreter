@@ -19,7 +19,7 @@ namespace Luna_interpreter.Model.Structure.Classes
                 Console.WriteLine(returnValue);
                 return returnValue;
             }
-            catch(Exception exc)
+            catch(Exception)
             {
                 return "";
             }

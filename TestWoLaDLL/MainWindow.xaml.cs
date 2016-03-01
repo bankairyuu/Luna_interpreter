@@ -43,7 +43,19 @@ namespace TestWoLaDLL
 
             parser.Setup(instanceId, "test", "test");
             object returnValue = parser.StartParsing(instructions);
-            output.Content = returnValue.ToString();
+            if (returnValue is List<string>)
+            {
+                string assets = "";
+                for (int i=0; i < ((List<string>)returnValue).Count; i++)
+                {
+                    assets += ((List<string>)returnValue)[i] + ", ";
+                }
+                output.Content = assets;
+            }
+            else
+            {
+                output.Content = returnValue.ToString();
+            }
             InputBox.Text = parser.ReductionTree;
         }
     }

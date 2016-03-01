@@ -14,6 +14,7 @@ namespace Luna_interpreter.Model.Structure.Classes
             List<string> whereClosure = null;
             List<string> orderByClosure = null;
 
+            List<string> retVal;
 
             for (int i = 2; i < node.Count(); i++)
             {
@@ -35,8 +36,19 @@ namespace Luna_interpreter.Model.Structure.Classes
                 }
             }
 
-            var retVal = SpecialOperation(container, whereClosure, orderByClosure);
-            return retVal;
+            ///Amennyiben a szervertől valamiért csak egy obj jönne vissza, azt is listába kell rakni, mert a GetExpression mindenképp listval tér vissza
+            object SO = SpecialOperation(container, whereClosure, orderByClosure);
+            if (SO is List<string>)
+            {
+                retVal = (List<string>)SO;
+                return retVal;
+            }
+            else
+            {
+                retVal = new List<string>();
+                retVal.Add(SO as string);
+                return retVal;
+            }
         }
 
         
@@ -66,9 +78,13 @@ namespace Luna_interpreter.Model.Structure.Classes
                 client.ClientCredentials.UserName.UserName = "test";
                 client.ClientCredentials.UserName.Password = "test";
 
+                List<string> retVal = new List<string>();
+                retVal.Add("asdf");
+                retVal.Add("www");
+
                 //var retVal = client.GetWorkforceByWhereClauseAndSorting(whereClosure == null ? null : whereClosure, orderByClosure == null ? null : orderByClosure);
 
-                //return retVal;
+                return retVal;
             }
             catch (Exception exc)
             {
@@ -76,7 +92,6 @@ namespace Luna_interpreter.Model.Structure.Classes
                 string ERROR = "ERROR : " + exc.Message;
                 return ERROR;
             }
-            return null;
         }
     }
 }
