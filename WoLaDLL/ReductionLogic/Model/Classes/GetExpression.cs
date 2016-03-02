@@ -104,7 +104,20 @@ namespace Luna_interpreter.Model.Structure.Classes
                         {
                             lst.Add(o.Id.ToString() + " " + o.TemplateProcessName + " " + o.ProcessState);
                         }
+                        return lst;
+                    }
+                    else if (s.Equals("Skills"))
+                    {
+                        var mcl = new WoLaDLL.ManagerService.ManagerServiceClient();
+                        mcl.ClientCredentials.UserName.UserName = "test";
+                        mcl.ClientCredentials.UserName.Password = "test";
+                        var skills = mcl.ListSkills();
 
+                        List<string> lst = new List<string>();
+                        foreach (var o in skills)
+                        {
+                            lst.Add(o.Id + " " + o.Name);
+                        }
                         return lst;
                     }
                 }
