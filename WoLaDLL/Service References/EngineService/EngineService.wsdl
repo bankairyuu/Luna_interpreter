@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://wfe.mik.uni-pannon.hu/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EngineService" targetNamespace="http://wfe.mik.uni-pannon.hu/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IEngineService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://wfe.mik.uni-pannon.hu/Imports">
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/EngineService/?xsd=xsd0" namespace="http://wfe.mik.uni-pannon.hu/" />
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/EngineService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://wfe.mik.uni-pannon.hu:8735/FlowService/EngineService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlowService.Engine.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEngineService_FireStartEventById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FireStartEventById" />
+  </wsdl:message>
+  <wsdl:message name="IEngineService_GetTemplateProcesses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplateProcesses" />
+  </wsdl:message>
+  <wsdl:message name="IEngineService_GetTemplateProcesses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplateProcessesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEngineService_GetProcessInstances_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProcessInstances" />
+  </wsdl:message>
+  <wsdl:message name="IEngineService_GetProcessInstances_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProcessInstancesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEngineService">
+    <wsdl:operation name="FireStartEventById">
+      <wsdl:input wsam:Action="http://wfe.mik.uni-pannon.hu/IEngineService/FireStartEventById" message="tns:IEngineService_FireStartEventById_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateProcesses">
+      <wsdl:input wsam:Action="http://wfe.mik.uni-pannon.hu/IEngineService/GetTemplateProcesses" message="tns:IEngineService_GetTemplateProcesses_InputMessage" />
+      <wsdl:output wsam:Action="http://wfe.mik.uni-pannon.hu/IEngineService/GetTemplateProcessesResponse" message="tns:IEngineService_GetTemplateProcesses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessInstances">
+      <wsdl:input wsam:Action="http://wfe.mik.uni-pannon.hu/IEngineService/GetProcessInstances" message="tns:IEngineService_GetProcessInstances_InputMessage" />
+      <wsdl:output wsam:Action="http://wfe.mik.uni-pannon.hu/IEngineService/GetProcessInstancesResponse" message="tns:IEngineService_GetProcessInstances_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEngineService" type="tns:IEngineService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IEngineService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FireStartEventById">
+      <soap:operation soapAction="http://wfe.mik.uni-pannon.hu/IEngineService/FireStartEventById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateProcesses">
+      <soap:operation soapAction="http://wfe.mik.uni-pannon.hu/IEngineService/GetTemplateProcesses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessInstances">
+      <soap:operation soapAction="http://wfe.mik.uni-pannon.hu/IEngineService/GetProcessInstances" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EngineService">
+    <wsdl:port name="BasicHttpBinding_IEngineService" binding="tns:BasicHttpBinding_IEngineService">
+      <soap:address location="https://wfe.mik.uni-pannon.hu:8735/FlowService/EngineService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

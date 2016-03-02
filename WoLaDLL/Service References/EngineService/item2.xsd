@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowService.Engine.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowService.Engine.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Process" nillable="true" type="tns:Process" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcess" nillable="true" type="tns:ArrayOfProcess" />
+  <xs:complexType name="Process">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SimpleStartEvents" nillable="true" type="tns:ArrayOfSimpleStartEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Process" nillable="true" type="tns:Process" />
+  <xs:complexType name="ArrayOfSimpleStartEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SimpleStartEvent" nillable="true" type="tns:SimpleStartEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSimpleStartEvent" nillable="true" type="tns:ArrayOfSimpleStartEvent" />
+  <xs:complexType name="SimpleStartEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SimpleStartEvent" nillable="true" type="tns:SimpleStartEvent" />
+  <xs:complexType name="ArrayOfProcessInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcessInstance" nillable="true" type="tns:ProcessInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcessInstance" nillable="true" type="tns:ArrayOfProcessInstance" />
+  <xs:complexType name="ProcessInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ProcessInstanceState" type="xs:int" />
+      <xs:element minOccurs="0" name="ProcessState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemplateProcessName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessInstance" nillable="true" type="tns:ProcessInstance" />
+</xs:schema>

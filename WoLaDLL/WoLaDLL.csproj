@@ -69,6 +69,11 @@
     <Compile Include="ReductionLogic\Model\Context\NonTerminalContext.cs" />
     <Compile Include="ReductionLogic\Model\Interfaces\INonTerminals.cs" />
     <Compile Include="ReductionLogic\Reduction.cs" />
+    <Compile Include="Service References\EngineService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ManagerService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,6 +89,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EngineService\" />
     <WCFMetadataStorage Include="Service References\ManagerService\" />
     <WCFMetadataStorage Include="Service References\WoLaService\" />
   </ItemGroup>
@@ -92,6 +98,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\EngineService\EngineService.wsdl" />
+    <None Include="Service References\EngineService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EngineService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EngineService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EngineService\WoLaDLL.EngineService.Process.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EngineService\WoLaDLL.EngineService.ProcessInstance.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ManagerService\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -313,6 +335,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ManagerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EngineService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EngineService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EngineService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EngineService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

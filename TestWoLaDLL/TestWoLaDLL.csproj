@@ -63,6 +63,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ListViewWindow.xaml.cs">
+      <DependentUpon>ListViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\EngineService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ManagerService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,6 +81,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Page Include="ListViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,6 +127,22 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\EngineService\EngineService.wsdl" />
+    <None Include="Service References\EngineService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EngineService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EngineService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EngineService\TestWoLaDLL.EngineService.Process.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EngineService\TestWoLaDLL.EngineService.ProcessInstance.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ManagerService\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -296,6 +324,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EngineService\" />
     <WCFMetadataStorage Include="Service References\ManagerService\" />
     <WCFMetadataStorage Include="Service References\WoLaService\" />
   </ItemGroup>
@@ -325,6 +354,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ManagerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EngineService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EngineService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EngineService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EngineService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -28,9 +28,18 @@ namespace Luna_interpreter.Model.Structure.Classes
         public object Operation(object operand1, string operand, object operand2)
         {
             string[] list = operand.ToString().Split(',');
+            List<string> retVal;
 
-            List<string> retVal = list.OfType<string>().ToList();
-
+            if (list.Length >= 1)
+            {
+                retVal = list.OfType<string>().ToList();
+            }
+            else
+            {
+                retVal = new List<string>();
+                retVal.Add(operand);
+            }
+            
             return retVal;
         }
     }

@@ -73,27 +73,41 @@ namespace Luna_interpreter.Model.Structure.Classes
         {
             try
             {
-                // service hívás
-                var client = new WoLaDLL.WoLaService.WoLaServiceClient();
-                client.ClientCredentials.UserName.UserName = "test";
-                client.ClientCredentials.UserName.Password = "test";
-
-                if (container.Contains("processes") || container.Contains("Processes"))
+                List<string> retVal = null;
+                // service hívás                
+                foreach (string s in container)
                 {
-                    var mcl = new WoLaDLL.ManagerService.ManagerServiceClient();
-                    var processes = mcl.ListProcesses();
-
-                    List<string> lst = new List<string>();
-                    foreach(object o in processes)
+                    if (s.Equals("Processes"))
                     {
-                        lst.Add(o.ToString());
-                    }
-                    return lst;
-                }
+                        var mcl = new WoLaDLL.ManagerService.ManagerServiceClient();
+                        mcl.ClientCredentials.UserName.UserName = "test";
+                        mcl.ClientCredentials.UserName.Password = "test";
+                        var processes = mcl.ListProcesses();
 
-                List<string> retVal = new List<string>();
-                retVal.Add("asdf");
-                retVal.Add("www");
+                        List<string> lst = new List<string>();
+                        foreach (var o in processes)
+                        {
+                            lst.Add(o.Id + " " +  o.Name);
+                        }
+                        return lst;
+                    }
+                    else if (s.Equals("Instances"))
+                    {
+                        var ecl = new WoLaDLL.EngineService.EngineServiceClient();
+                        ecl.ClientCredentials.UserName.UserName = "test";
+                        ecl.ClientCredentials.UserName.Password = "test";
+
+                        var instances = ecl.GetProcessInstances(whereClosure[0] == null ? -1 : Int32.Parse(whereClosure[0]));
+                        
+                        List<string> lst = new List<string>();
+                        foreach (var o in instances)
+                        {
+                            lst.Add(o.Id.ToString() + " " + o.TemplateProcessName + " " + o.ProcessState);
+                        }
+
+                        return lst;
+                    }
+                }
 
                 //var retVal = client.GetWorkforceByWhereClauseAndSorting(whereClosure == null ? null : whereClosure, orderByClosure == null ? null : orderByClosure);
 

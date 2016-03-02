@@ -45,12 +45,15 @@ namespace TestWoLaDLL
             object returnValue = parser.StartParsing(instructions);
             if (returnValue is List<string>)
             {
-                string assets = "";
-                for (int i=0; i < ((List<string>)returnValue).Count; i++)
-                {
-                    assets += ((List<string>)returnValue)[i] + ", ";
-                }
-                output.Content = assets;
+                //string assets = "";
+                //for (int i=0; i < ((List<string>)returnValue).Count; i++)
+                //{
+                //    assets += ((List<string>)returnValue)[i] + ", ";
+                //}
+                //output.Content = assets;
+
+                new ListViewWindow((List<string>)returnValue).Show();
+                output.Content = "See results in the ListViewWindow!";
             }
             else
             {
