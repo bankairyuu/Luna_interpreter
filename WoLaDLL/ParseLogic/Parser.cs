@@ -68,6 +68,26 @@ namespace WoLaDLL.ParseLogic
         }
 
         /// <summary>
+        /// Szintaktikai ellenőrzésre lehetőséget adó eljárás, mely eldönti, hogy az adott instrukciók megfelelnek-e a modul által használt nyelvtannak,
+        /// mindezt azzal éri el, hogy megpróbálja felépíteni a leképzési fát az adott nyelvtan szerint
+        /// </summary>
+        /// <param name="instructions">az ellenőrizendő input szöveg</param>
+        /// <returns>logikai igaz, amennyiben szintaktikailag helyes a bemenet, illetve objektum (string) ha nem helyes, ebben a hibaüzenettel</returns>
+        public object SyntaxCheck(string instructions)
+        {
+            if (Parse(new StringReader(instructions)))
+            {
+                ReductionTree = DrawReductionTree(Root);
+                return true;
+            }
+            else
+            {
+                return FailMessage;
+            }
+
+        }
+
+        /// <summary>
         /// A parszolási fa generálását elindító rekurziós fej
         /// </summary>
         /// <param name="Root">A lebontási fa gyökéreleme</param>
